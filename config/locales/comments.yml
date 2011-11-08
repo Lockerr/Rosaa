@@ -1,0 +1,11 @@
+ru:
+ comments:
+   index:
+     comments: 'Комментарии'
+     comment: 'Комментарий'
+     submit: 'Разместить'
+     update: 'разместить'
+ helpers:
+   submit:
+     comment:
+       create: 'Разместить'

@@ -1,0 +1,42 @@
+.b-registration
+  .b-topcol-leftcol
+    .js-registration-button.rc16.b-registration-button-container
+      .b-registration-button
+        .b-registration-button__slogan ПРИСОЕДИНЯЙСЯ!
+        .b-registration-button__text Нам очень нужен твой голос
+  .b-topcol-centercol
+    .inlineBlock.b-registration-info__text
+      Мы — это Российская Армия Автомобилистов.
+      %br/
+      Мы создаём работающий механизм, который будет доносить до власти наше мнение!
+      %br/
+      И если нас будет много — тогда они нас услышат!
+  .b-topcol-rightcol
+    .b-registration-users
+      %span.inlineBlock.b-highlight.b-registration-users__amount
+        = User.count
+      %span.inlineBlock.b-registration-users__persons участников
+  .clear
+.js-regform.b-regform
+  %form.b-regform-form{:action => "/"}
+    .b-topcol-leftcol
+      .b-textinput-wrap
+        %label.b-regform__label{:for => "b-regform__email"} Электронная почта
+        %input#b-regform__email.b-textinput{:type => "email"}/
+    .b-topcol-centercol
+      .b-textinput-wrap
+        %label.b-regform__label{:for => "b-regform__name"} Твоё имя
+        %input#b-regform__name.b-textinput{:type => "text"}/
+    .b-topcol-rightcol
+      .b-regform-button-container
+        .rc10.inlineBlock.b-regform__button
+          ПРИСОЕДИНИТЬСЯ
+        .inlineBlock.b-regform__close
+          или
+          %span.js-regform__close.inlineBlock.pseudolink-dotted
+            %span.b-pseudolink-icon>
+            закрыть
+    .clear
+  %span.b-bigblockcorner-container
+    %span.b-bigblockcorner-wrap
+      %span.b-bigblockcorner

@@ -1,0 +1,54 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$main_bg_color: #E7F1F7;
+
+.comment {
+      background-color: $main_bg_color;
+      border-radius: 12px 0px 12px 12px;
+      margin-left: 20px;
+      margin-bottom: 12px;
+      padding: 20px;
+      .vote-reply {
+        margin-left: -10px;
+        float: left;
+
+        .up {
+          width: 25px;
+          height: 25px;
+          cursor: pointer;
+          background: url(/assets/idea/vote-btns-small.png) no-repeat;
+          color: #fff;
+          margin: 0;
+          border: 0;
+          border-style: none;
+
+        }
+
+        .down {
+          @extend .up;
+          background-position: -25px -25px;
+        }
+
+      }
+
+      .title{
+        margin-left: 27px;
+      }
+
+      .body {
+        @extend .title
+      }
+    }
+.comments {
+.comment {
+  .vote-comment {
+    float: left;
+    margin-right: 10px;
+    .button_to {
+        background-color: $main_bg_color;
+    }
+
+  }
+}
+}

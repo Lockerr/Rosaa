@@ -1,0 +1,27 @@
+<div id="big-filter">
+  <div class="accepted selected selected-accepted" title="Лучшие в работе!" tag=""></div>
+  <div class="introduced " title="Внедрены" tag=""></div>
+  <div class="considered " title="Рассмотрены" tag=""></div>
+  <div class="review " title="На рассмотрении" tag=""></div>
+  <div class="all " title="Все" tag=""></div>
+</div>
+
+<%= link_to t('new_idea'), new_idea_path if current_user %>
+
+
+<%= will_paginate @ideas, :inner_window => 1, :outer_window => 0 %>
+
+<div class="views-row">
+  <% for idea in @ideas %>
+      <div class="views-row-<%= @ideas.index(idea) %>">
+        <div class="views-row-<%= @ideas.index(idea).odd? ? 'odd' : 'even' %> <%= 'views-row-first' if @ideas.index(idea) == 0 %>">
+          <div class="idea-announce">
+            <%= render idea %>
+          </div>
+        </div>
+      </div>
+
+
+
+
+  <% end %>

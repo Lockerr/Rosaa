@@ -1,0 +1,5 @@
+<% if idea.comments.any? %>
+    <%= idea.comments.last.comment %>
+<% else %>
+    <%= t('.no_comments') %>
+<% end %>

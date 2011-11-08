@@ -1,0 +1,116 @@
+// Place all the styles related to the ideas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$main_bg_color: #E7F1F7;
+form {
+    &.button_to {
+        padding: 0;
+        width: 32px;
+        background-color: #ffffff;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+h3 {
+display: block;
+font-size: 1.17em;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+font-weight: bold;
+}
+
+
+.idea-announce {
+  margin-bottom: 19px;
+  margin-top: 5px;
+  .title {
+    margin: 0px;
+  }
+
+  .vote-idea {
+  width: 39px;
+  height: 39px;
+  float: left;
+
+  }
+
+  .idea {
+    margin-left: 50px;
+    .comment {
+      background-color: $main_bg_color;
+      border-radius: 12px 0px 12px 12px;
+      margin-left: 20px;
+      margin-bottom: 12px;
+      padding: 20px;
+      .vote-reply {
+        margin-left: -10px;
+        float: left;
+
+        .up {
+          width: 25px;
+          height: 25px;
+          cursor: pointer;
+          background: url(/assets/idea/vote-btns-small.png) no-repeat;
+          color: #fff;
+          margin: 0;
+          border: 0;
+          border-style: none;
+
+        }
+
+        .down {
+          @extend .up;
+          background-position: -25px -25px;
+        }
+
+      }
+
+      .title{
+        margin-left: 27px;
+      }
+
+      .body {
+        @extend .title
+      }
+    }
+    h3 {
+      font-size: 2em;
+      font-weight: 100;
+      margin: 10px 0;
+      sup {
+        font-size: 0.43em;
+        font-style: italic;
+        padding-left: 1ex;
+      }
+    }
+
+
+  }
+}
+.pager {
+  margin-top: 5px;
+  height: 30px;
+}
+.goto {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #bbb;
+  background-color: white;
+  width: 30px;
+  border-radius: 15px 0px 15px 6px;
+  float: left;
+  margin-right: 10px;
+  cursor: pointer;
+
+  &.current
+    {
+    background-color: $main_bg_color;
+    border-color: $main_bg_color;
+    }
+}
+

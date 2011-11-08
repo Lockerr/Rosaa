@@ -1,0 +1,30 @@
+ru:
+  hello: 'Привет'
+  ozenka: "Оценка"
+  content:
+    idea:
+      new_idea: "Новая идея"
+  activerecord:
+    models:
+      email: 'Почта'
+      user: 'Регистрация'
+    attributes:
+      idea:
+        subject: 'Тема'
+        body: 'Описание'
+      user:
+        email: 'Почта'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        current_password: 'Текущий пароль'
+        remember_me: 'Запомнить меня'
+  idea:
+    new:
+      submit: 'Создать'
+  ideas:
+    show:
+      comment: 'Ваш комментарий'
+
+  create:
+    success: "Идея успешно зарегистрирована."
+  signed_as: "Вы вошли как"
