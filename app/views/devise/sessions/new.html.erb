@@ -1,0 +1,21 @@
+<%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+<%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <h2><%= t('devise.sessions.sign_in.title') %></h2>
+
+    <div><%= f.label :email %><br />
+      <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me, :class => :check_box %> <%= f.label :remember_me, :class => :check_box %></div>
+  <% end -%>
+
+  <div><%= f.submit t('devise.sessions.sign_in.button'), :class => 'submit' %></div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

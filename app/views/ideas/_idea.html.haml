@@ -1,0 +1,36 @@
+.b-posts{:id => "idea_#{idea.id}"}
+  .js-post.b-post
+    .b-post-leftcol
+      .b-post-header
+        %span.js-post-header__link.inlineBlock.pseudolink-underline.b-post-header__link
+          =idea.subject
+      .b-post__text
+        = idea.body
+      .b-post__author
+        №541 //
+        = idea.created_at.strftime('%d %B %Y %H:%M')
+        от
+        %a{:href => "#"}
+          = idea.user.nick || idea.user.email
+    .b-post-rightcol
+      = button_to '', vote_idea_path(idea), :remote => true, :method => :post, :class => 'vote'
+      .inlineBlock.b-post-karma__amount{:id => "idea_#{idea.id}"}
+        = idea.likes.count
+      = button_to '', devote_idea_path(idea), :remote => true, :class => 'devote'
+      .b-post-karma__votes
+        Голосов:
+        = idea.votes.count
+        %span.b-post__comment-link
+          %span.js-post__comment-link.inlineBlock.pseudolink-dotted Комментировать
+          ↓
+      .b-post-share
+        %a{:href => "#"}
+          %img{:alt => "", :src => "yaru.gif"}/
+        %a{:href => "#"}
+          %img{:alt => "", :src => "vk.gif"}/
+        %a{:href => "#"}
+          %img{:alt => "", :src => "facebook.gif"}/
+    .clear
+    %span.b-bigblockcorner-container
+      %span.b-bigblockcorner-wrap
+        %span.b-bigblockcorner

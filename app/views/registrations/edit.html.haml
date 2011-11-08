@@ -1,0 +1,33 @@
+.second_step_form
+  .info_frame
+    = t('.info_here')
+  .user_edit
+    = form_tag user_registration_path, :method => :put do
+      %fieldset
+        %label
+          = t('first_name')
+          \:
+        %p.input
+          = text_field_tag 'user[first_name]', current_user.first_name
+      %fieldset
+        %label
+          = t('second_name')
+          \:
+        %p.input
+          = text_field_tag 'user[second_name]', current_user.second_name
+      %fieldset
+        %label
+          = t('phone')
+          \:
+        %p.input
+          = text_field_tag 'user[phone]', current_user.phone
+
+      %fieldset
+        %label
+          = t('nick')
+          \:
+        %p.input
+          = text_field_tag 'user[nick]', current_user.nick
+
+      %p.button.blue
+        %input.form_button{:name => "commit", :type => "submit", :value => "Изменить"}/

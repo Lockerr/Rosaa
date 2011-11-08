@@ -1,0 +1,38 @@
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+    <%= devise_error_messages! %>
+    <h2> Редактирование профиля</h2>
+
+    <div>
+    <%= f.label :first_name, :class=> 'attention' %>  <br/>
+    <%= f.text_field :first_name %>
+  </div>
+<div>
+    <%= f.label :second_name, :class => 'attention' %>  <br/>
+    <%= f.text_field :second_name %>
+  </div>
+<div>
+    <%= f.label :phone, :class => 'attention' %>  <br/>
+    <%= f.text_field :phone %>
+  </div>
+
+
+
+
+    <div><%= f.label :email %><br />
+      <%= f.email_field :email %></div>
+
+    <div><%= f.label :password %> <i><%= (t('leave_blank_password')) %></i><br />
+      <%= f.password_field :password %></div>
+
+    <div><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %></div>
+
+    <div><%= f.label :current_password %> <i>(<%= t('confirm_for_changes') %>)</i><br />
+      <%= f.password_field :current_password %></div>
+
+    <div><%= f.submit t('update'), :class => 'submit' %></div>
+<% end %>
+
+
+<%= link_to "Back", :back %>

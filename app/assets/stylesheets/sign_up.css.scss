@@ -1,0 +1,61 @@
+input, textarea {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    padding: 10px;
+    padding-left: 15px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 32px 32px 32px 32px;
+    border: solid 3px #EFEFEF;
+    background: #f0f0f0;
+    //box-shadow: inset 0 0 3px #000000;
+    font-size: 150%;
+    outline-style: none;
+    cursor: pointer;
+    &.submit {
+        padding-top: 8px;
+        padding-left: 10px;
+        height: 44px;
+        background: url('assets/b-post-karma.gif') no-repeat 7px -14px;
+            background-color: red;
+    }
+    &.check_box {
+        height: 13px;
+    }
+}
+
+textarea {
+    padding-top: 25px;
+    height: 250px;
+}
+form {
+    padding: 10px;
+    padding-left: 20px;
+    background-color: #E7F1F7;
+    border-radius: 15px 0px 15px 6px;
+}
+
+label {
+  font-size: 150%;
+    &.attention {
+        color: red;
+    }
+    &.check_box {
+
+    }
+}
+
+#flash_alert {
+    font-size: 32px;
+    color: red;
+}
+input[class="vote"] {
+    background: url('b-post-karma.gif') no-repeat 7px -14px;
+    background-color: red;
+}
+input[class="devote"] {
+    background: url('b-post-karma.gif') no-repeat 7px 11px;
+    background-color: red;
+}
+

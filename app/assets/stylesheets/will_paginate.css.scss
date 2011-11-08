@@ -1,0 +1,47 @@
+.pagination {
+
+    border: none;
+    text-align: center;
+    padding: 1em;
+    cursor: default;
+    height: 20px;
+    width: 600px;
+    background-color: white;
+
+    .disabled {
+        color: white;
+
+    }
+
+    .current, a, .gap, .disabled {
+        border-style: solid;
+        border-width: 2px;
+        width: 30px;
+        border-radius: 15px 0px 15px 6px;
+        float: left;
+        margin-right: 5px;
+        cursor: pointer;
+        text-decoration: initial;
+    }
+
+    .current {
+
+        border-color: #bbb;
+        background-color: #00ff05;
+
+    }
+
+    a {
+
+        border-color: #bbb;
+
+    }
+    .gap {
+       border: none;
+
+
+    }
+
+    .a:hover, .a:focus {
+    }
+}

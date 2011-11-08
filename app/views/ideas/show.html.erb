@@ -1,0 +1,13 @@
+<div class="idea-announce">
+  <%= render @idea %>
+</div>
+
+<div class='new comments'>
+  <%= form_for [@commentable, Comment.new] do |f| %>
+  <p>
+    <%= f.label t('.comment') %><br/>
+    <%= f.text_area :comment %>
+  </p>
+  <p> <%= f.submit %></p>
+  <% end %>
+</div>

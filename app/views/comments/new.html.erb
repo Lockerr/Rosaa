@@ -1,0 +1,150 @@
+<%= t('.comments') %>
+<div class="comments">
+  <% for comment in Idea.find(params[:idea_id]).comments %>
+      <div class="comment">
+        <%= render comment %>
+      </div>
+  <% end %>
+</div>
+
+<div class='new comments'>
+  <%= form_for [@commentable, Comment.new] do |f| %>
+      <p>
+        <%= f.label t('.comment') %><br/>
+        <%= f.text_area :comment %>
+      </p>
+      <p> <%= f.submit %></p>
+  <% end %>
+</div>
+
+<%= %>
+<div id="comments">
+  <div id="comment-preview"></div>
+  <div id="post-comment-form" class="box comment-form">
+    <h2 class="ajax-comments-processed">
+      <a href="/comment/reply/3981" id="comment-form-title" class="pressed ajax-comments-processed">Комментировать</a><span id="comments-count">Уже 4 комментария</span>
+    </h2>
+
+    <div class="" id="comment-form-content" cid="0">
+
+      <div id="comment-preview"></div>
+      <form action="/comment/reply/3981" accept-charset="UTF-8" method="post" id="comment-form" class="ajax-comments-processed">
+        <div>
+          <div class="msg-a-ne-comment"></div>
+          <div class="profile-tab-empty">Пожалуйста, <a href="/user/7122/edit/">скажите нам свое имя</a>, чтобы мы&nbsp;знали,
+            с&nbsp;кем разговариваем.
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <a id="comment-10472"></a>
+
+  <div class="comment post-comment post-comment-user  comment-published -odd">
+    <h3 style="display:none">...</h3>
+
+    <div class="title -odd">
+      <div class="decor-left"></div>
+      <div class="decor-right"></div>
+      <img src="http://idea.alfabank.ru/sites/default/files/imagecache/avasmall/pictures/picture-464.jpg" alt="Vladimir" title="" class="user-ava" width="25" height="25">				<span class="author">
+			<a href="/users/vladimir/" class="name">Vladimir</a>,
+		</span>
+      <span class="date">14 сентября 2011, 22:32</span>
+    </div>
+    <div class="body">
+
+      <div class="content">
+        <p>Нисколько не сомневаюсь, что ответ будет таким:</p>
+
+        <p>Данная возможность будет реализована в новой версии "Альфа-Клик", которая будет внедрена в следующем
+          году.</p>
+
+        <p>:)</p>
+
+        <div class="links">
+          <span class="comment_reply"><a href="/comment/reply/3981/10472/" class="ajax-replay ajax-comments-processed">ответить</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="indented"><a id="comment-10473"></a>
+
+    <div class="comment post-comment post-comment-user  comment-published -even">
+      <h3 style="display:none">...</h3>
+
+      <div class="title -even">
+        <div class="decor-left"></div>
+        <div class="decor-right"></div>
+						<span class="author">
+			<a href="/users/kalessind/" class="name">Kalessind</a>,
+		</span>
+        <span class="date">14 сентября 2011, 22:52</span>
+      </div>
+      <div class="body">
+
+        <div class="content">
+          <p>Ну да. К гадалке можно не ходить. Так и будет. :) А пока придётся пользоваться альтернативными средствами
+            оплаты электроэнергии. Хотя, если честно, есть маленькая надежда, что хотя бы пару полей разрешат отображать
+            в шаблоне и с включенной авторизацией - все-таки не глобальная переделка интерфейса, а что-то вроде "смены
+            прав" доступа на отображение отдельных полей.</p>
+
+          <div class="links">
+            <span class="comment_reply"><a href="/comment/reply/3981/10473/" class="ajax-replay ajax-comments-processed">ответить</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="indented"><a id="comment-10479"></a>
+
+      <div class="comment post-comment   comment-published -odd">
+        <h3 style="display:none">...</h3>
+
+        <div class="title -odd">
+          <div class="decor-left"></div>
+          <div class="decor-right"></div>
+          <img src="http://idea.alfabank.ru/sites/default/files/imagecache/avasmall/pictures/picture-5250.jpg" alt="Сергей Середин" title="" class="user-ava" width="25" height="24">				<span class="author">
+			<a href="/users/cougar/" class="name">Сергей Середин</a><span class="employee-logo"></span>,
+		</span>
+          <span class="date">15 сентября 2011, 07:35</span>
+        </div>
+        <div class="body">
+
+          <div class="content">
+            <p>Не совсем, к сожалению, так. Если бы кто-то мог "вот просто так" сделать что-то вроде смены прав доступа
+              на отображение полей, да и вообще, хоть бит изменить в коде интернет-банка, это был бы не интернет-банк, а
+              непонятно что. Каждое изменение требует уймы согласований и утверждений.<br>
+              А ответ конечно будет именно такой, как написал Владимир...</p>
+
+            <div class="links">
+              <span class="comment_reply"><a href="/comment/reply/3981/10479/" class="ajax-replay ajax-comments-processed">ответить</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a id="comment-10484"></a>
+
+    <div class="comment post-comment post-comment-user  comment-published -even">
+      <h3 style="display:none">...</h3>
+
+      <div class="title -even">
+        <div class="decor-left"></div>
+        <div class="decor-right"></div>
+        <img src="http://idea.alfabank.ru/sites/default/files/imagecache/avasmall/pictures/picture-823.jpg" alt="Альфонс" title="" class="user-ava" width="19" height="25">				<span class="author">
+			<a href="/users/%D0%B0%D0%BB%D1%8C%D1%84%D0%BE%D0%BD%D1%81/" class="name">Альфонс</a>,
+		</span>
+        <span class="date">15 сентября 2011, 15:45</span>
+      </div>
+      <div class="body">
+
+        <div class="content">
+          <p>От души посмеялся, прочитав ваш комментарий, а оказалось действительно так.</p>
+
+          <div class="links">
+            <span class="comment_reply"><a href="/comment/reply/3981/10484/" class="ajax-replay ajax-comments-processed">ответить</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.vote-comment
+  = button_to '', vote_comment_path(comment), :method => :post, :class => 'up'
+  = button_to '', devote_comment_path(comment), :method => :post, :class => 'down'
+
+.comment-title
+  = comment.user.nick || comment.user.first_name || comment.user.email
+
+.date
+  = comment.created_at.strftime('%d %B %Y %H:%M')
+
+.comment
+  = comment.comment

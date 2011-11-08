@@ -1,0 +1,40 @@
+.b-newpost
+  .inlineBlock.b-newpost-leftcol
+    .js-newpost-button.rc16.b-registration-button-container
+      .b-registration-button
+        .b-registration-button__slogan ТВОЁ ПРЕДЛОЖЕНИЕ
+        .b-registration-button__text Нам очень нужен твой голос
+  .inlineBlock.b-newpost-doublecol
+    .inlineBlock.b-newpost__text
+      Если есть что сказать, то мы будем рады твоему предложению. Расскажи, что ты считаешь важным, и путём голосования
+      мы решим, что является самым актуальным!
+  .clear
+.js-newpost-form.b-newpostform
+  %form.b-regform-form{:action => "/"}
+    .b-topcol-doublecol
+      .b-textinput-wrap
+        %label.b-regform__label{:for => "b-newpostform__text"} Я хочу предложить
+        %textarea#b-newpostform__text.b-textinput{:cols => "50", :rows => "5"}
+    .clear
+    .b-topcol-leftcol
+      .b-textinput-wrap
+        %label.b-regform__label{:for => "b-newpostform__email"} Электронная почта
+        %input#b-newpostform__email.b-textinput{:type => "text"}/
+    .b-topcol-centercol
+      .b-textinput-wrap
+        %label.b-regform__label{:for => "b-newpostform__name"} Пароль
+        %input#b-newpostform__name.b-textinput{:type => "password"}/
+    .b-topcol-rightcol
+      .b-regform-button-container
+        .rc10.inlineBlock.b-regform__button
+          ПРЕДЛОЖИТЬ
+        .inlineBlock.b-regform__close
+          или
+          %span.js-newpost__close.inlineBlock.pseudolink-dotted
+            %span.b-pseudolink-icon>
+            закрыть
+      .b-error Укажи электронную почту
+    .clear
+  %span.b-bigblockcorner-container
+    %span.b-bigblockcorner-wrap
+      %span.b-bigblockcorner
