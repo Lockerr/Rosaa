@@ -16,9 +16,17 @@ set :deploy_to, "/home/ubuntu/rosaa"
 # these http://github.com/rails/irs_process_scripts
 
 # If you are using Passenger mod_rails uncomment this:
+after 'deploy:update_code', :roles => :app do
+  %w{database config}.each do |yaml_name|
+    run "rm -f #{current_release}/config/#{yaml_name}.yml"
+    run "ln -s #{deploy_to}/shared/config/#{yaml_name}.yml #{current_release}/config/#{yaml_name}.yml"
+  end
+
+end
 namespace :deploy do
   desc "Restarting mod_rails with restart.txt"
   task :restart, :roles => :app, :except => { :no_release => true } do
+    run "cd #{current_release} ; bundle install"
     run "touch #{current_path}/tmp/restart.txt"
   end
 
