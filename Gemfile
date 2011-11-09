@@ -6,13 +6,15 @@ gem 'rails', '3.1.1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-
+gem 'geocoder'
 gem 'execjs'
 gem 'therubyracer', :require => 'v8'
 gem 'acts_as_votable'
 gem 'acts_as_commentable'
 gem 'haml'
 gem 'russian'
+
+gem 'unicorn'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -29,7 +31,7 @@ gem 'devise'
 group :development do
   gem 'capistrano'
   gem 'capistrano-ext'
-
+  gem 'passenger'
 end
 
 
