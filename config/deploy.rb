@@ -9,7 +9,7 @@ role :app, location                          # This may be the same as your `Web
 role :db,  location, :primary => true # This is where Rails migrations will run
 
 set :user, 'ubuntu'
-ssh_options[:keys] = [File.join(ENV['HOME'], '.ec2', 'v.pem')]
+ssh_options[:keys] = [File.join(ENV['HOME'],'.ssh', '.ec2', 'v.pem')]
 set :deploy_to, "/home/ubuntu/rosaa"
 
 # if you're still using the script/reaper helper you will need
