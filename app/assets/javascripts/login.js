@@ -7,7 +7,7 @@ $(document).ready(function() {
               var amount = $('.b-registration-users__amount')[0].innerHTML
               amount = parseInt(amount) + 1
               $('.b-registration-users__amount').html(amount);
-              $('.b-registration-button__slogan').html('УРААААААААААААА');
+              $('.b-registration-button__slogan').html('Вы присоединились');
               $('#user_nav').html(data.content);
               $(".js-regform").slideToggle(200);
               $(".js-regform").html('');
