@@ -59,19 +59,3 @@ Rossa::Application.configure do
   config.active_support.deprecation = :notify
   config.action_mailer.default_url_options = { :host => "rosaa.net" }
 end
-
-require 'action_mailer'
-
-ActionMailer::Base.delivery_method = :file
-
-class BugMailer < ActionMailer::Base
-  def daily_email
-    mail(
-            :to      => "antiqe@mail.com",
-            :from    => "rosaa@rosaa.net",
-            :subject => "testing mail"
-    )
-  end
-end
-
-BugMailer.daily_email.deliver
