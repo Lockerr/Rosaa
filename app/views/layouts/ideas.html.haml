@@ -14,12 +14,15 @@
       <link rel="stylesheet" type="text/css" href="CSS/ie.css"/>
     = csrf_meta_tags
   %body
-    = render 'layouts/user_nav'
+    #user_nav
+      = render 'layouts/user_nav'
     .l-wrap
       = render 'layouts/header_logo'
       = render 'layouts/top_text'
       = render 'layouts/calculator'
-      = render 'layouts/registration'
-      = render Idea.all(:limit => 5, :order => 'created_at desc')
+      = render 'layouts/registration'  if !current_user
+      = will_paginate @posts
+      = render @ideas
+      = will_paginate @posts
       = render 'layouts/new_idea'
       = render 'layouts/footer'

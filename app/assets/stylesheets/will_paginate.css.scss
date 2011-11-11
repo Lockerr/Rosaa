@@ -1,12 +1,14 @@
 .pagination {
-
+    margin-top: 5px;
+    margin-bottom: 5px;
     border: none;
     text-align: center;
     padding: 1em;
     cursor: default;
     height: 20px;
-    width: 600px;
+    width: 1066px;
     background-color: white;
+    border: 1px solid #E6E6E6;
 
     .disabled {
         color: white;
@@ -27,7 +29,9 @@
     .current {
 
         border-color: #bbb;
-        background-color: #00ff05;
+        background-color: red;
+        color: white;
+        font-size: x-large;
 
     }
 

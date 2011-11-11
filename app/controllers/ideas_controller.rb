@@ -2,8 +2,8 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.paginate(:page => params[:page])
-
+    @ideas = Idea.paginate(:page => params[:page]).order('id desc')
+    @idea = Idea.new
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @ideas }

@@ -2,7 +2,7 @@
   .inlineBlock.b-newpost-leftcol
     .js-newpost-button.rc16.b-registration-button-container
       .b-registration-button
-        .b-registration-button__slogan ТВОЁ ПРЕДЛОЖЕНИЕ
+        .b-idea-button__slogan ТВОЁ ПРЕДЛОЖЕНИЕ
         .b-registration-button__text Нам очень нужен твой голос
   .inlineBlock.b-newpost-doublecol
     .inlineBlock.b-newpost__text
@@ -10,30 +10,29 @@
       мы решим, что является самым актуальным!
   .clear
 .js-newpost-form.b-newpostform
-  %form.b-regform-form{:action => "/"}
+  = form_for(@idea, :html => {:class => 'b-regform-form'}) do |f|
     .b-topcol-doublecol
       .b-textinput-wrap
-        %label.b-regform__label{:for => "b-newpostform__text"} Я хочу предложить
-        %textarea#b-newpostform__text.b-textinput{:cols => "50", :rows => "5"}
-    .clear
-    .b-topcol-leftcol
-      .b-textinput-wrap
-        %label.b-regform__label{:for => "b-newpostform__email"} Электронная почта
-        %input#b-newpostform__email.b-textinput{:type => "text"}/
-    .b-topcol-centercol
-      .b-textinput-wrap
-        %label.b-regform__label{:for => "b-newpostform__name"} Пароль
-        %input#b-newpostform__name.b-textinput{:type => "password"}/
+        - if @idea.errors.any?
+          #error_explanation
+            %h2
+              = pluralize(@idea.errors.count, "error")
+              prohibited this idea from being saved:
+            %ul
+              - @idea.errors.full_messages.each do |msg|
+                %li= msg
+        = f.label :subject, :class => 'b-regform__label'
+        %br/
+        = f.text_area :body, :class => 'b-textinput', :id => 'b-newpostform__text', :cols => 50, :rows => 5
     .b-topcol-rightcol
       .b-regform-button-container
-        .rc10.inlineBlock.b-regform__button
-          ПРЕДЛОЖИТЬ
+        = f.submit 'ПРЕДЛОЖИТЬ' , :class => 'rc10 inlineBlock b-regform__button', :style => 'height: 63px'
         .inlineBlock.b-regform__close
           или
           %span.js-newpost__close.inlineBlock.pseudolink-dotted
             %span.b-pseudolink-icon>
             закрыть
-      .b-error Укажи электронную почту
+
     .clear
   %span.b-bigblockcorner-container
     %span.b-bigblockcorner-wrap

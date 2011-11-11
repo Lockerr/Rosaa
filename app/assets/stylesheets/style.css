@@ -297,7 +297,7 @@ a.b-toptext-lead__link:hover {
 
 
 /* Registration */
-.b-registration {
+.b-registration, b-idea {
 	background: #fff;
 	position: relative;
 	z-index: 3;
@@ -311,7 +311,7 @@ a.b-toptext-lead__link:hover {
 .b-registration .b-topcol-rightcol {
 	padding: 2.125em 0 1.75em;
 }
-.b-registration-button-container {
+.b-registration-button-container, .b-idea-button-container {
 	border: 6px solid #e6e6e6;
 	background: #ff0000;
 	cursor: pointer;
@@ -320,22 +320,22 @@ a.b-toptext-lead__link:hover {
 	top: 0;
 	left: -1px;
 }
-.b-registration-button {
+.b-registration-button, .b-idea-button {
 	padding: 0.75em;
 	text-align: center;
 	text-transform: uppercase;
 }
-.b-registration-button__slogan {
+.b-registration-button__slogan, .b-idea-button__slogan {
 	color: #fff;
 	font-size: 1.125em;
 	line-height: 1.1;
 	padding-bottom: 3px;
 }
-.b-registration-button__text {
+.b-registration-button__text, b-idea-button__text {
 	font-size: 0.625em;
 	line-height: 1;
 }
-.b-registration-info__text {
+.b-registration-info__text, b-idea-info__text {
 	font-size: 0.875em;
 	line-height: 1.25;
 	padding: 0 5%;

@@ -16,3 +16,5 @@ ru:
 
       multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
       multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
+  err_confirm: "Истек срок подтверждения"
+  wrong_password: "Не верный пароль"

@@ -7,33 +7,31 @@ gem 'rails', '3.1.1'
 
 gem 'mysql2'
 gem 'geocoder'
-gem 'execjs'
-gem 'therubyracer', :require => 'v8'
 gem 'acts_as_votable'
 gem 'acts_as_commentable'
 gem 'haml'
 gem 'russian'
-
 gem 'unicorn'
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-end
+
 gem 'will_paginate'
 gem 'jquery-rails'
 gem 'rails3-jquery-autocomplete'
 gem 'paperclip'
 gem 'devise'
 
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+end
+
 group :development do
   gem 'capistrano'
   gem 'capistrano-ext'
   gem 'passenger'
 end
-
 
 group :development, :test do
   gem 'rspec-rails'
