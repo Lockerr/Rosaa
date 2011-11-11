@@ -1,5 +1,7 @@
-<p>Welcome <%= @resource.email %>!</p>
+<p>Добро пожаловать <%= @resource.email %>!</p>
+<p> Кто-то использовал адрес вашего почтового ящика для регистрации в Интернет-сообществе "Российская армия автомобилистов</p>
 
-<p>You can confirm your account through the link below:</p>
+<p>Пожалуйста пройдите по ссылке ниже для подтверждения регистрации:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<p><%= link_to 'Подтвердить регистрацию', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<p> Если вы не проходили регистрацию, то просто проигнорируйте это письмо</p>
