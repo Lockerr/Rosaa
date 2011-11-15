@@ -19,24 +19,30 @@ class SessionsController < Devise::SessionsController
       else
         set_flash_message :notice, :inactive_signed_up, :reason => inactive_reason(resource) if is_navigational_format?
         expire_session_data_after_sign_in!
-        return render :json => {:success => true, :errors => t('err_confirm')}
+        return render :json => {:success => false, :content => render_to_string(:layout => false, :partial => 'devise/confirmations/sent')}
 
       end
     else
       action = ''
       errors = resource.errors
+      #raise resource.errors.inspect
       #rise (errors.messages.flatten.join(" ").scan(/email/) == true).inspect
+      u = User.find_by_email(resource.email)
       if errors.messages.flatten.join.scan(/email/)
-        if User.find_by_email(resource.email)
+        if u and u.confirmed?
           errors = t('wrong_password')
+        else
           action = 'Resend'
         end
       end
       clean_up_passwords(resource)
       if action == 'Resend'
-        return render :json => {:success => false, :content => render_to_string(:layout => false, :partial => 'devise/reset_password')}
+        return render :json => {:success => false,
+                                :content => render_to_string(:layout => false, :partial => 'devise/confirmations/new'),
+        }
       else
-        return render :json => {:success => false, :content => render_to_string(:layout => false, :partial => 'devise/confirmations/new')}
+        return render :json => {:success => false,
+                                :content => render_to_string(:layout => false, :partial => 'devise/reset_password')}
       end
 
     end

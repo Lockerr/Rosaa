@@ -1,0 +1,20 @@
+.js-regform.b-regform
+  #user_login_box
+    = form_for(resource, :as => resource_name, :remote => true, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+      .b-topcol-leftcol
+        .b-textinput-wrap
+          = f.label 'Электронная почта', :class => 'b-regform__label'
+          = f.text_field :email, :class => 'b-textinput', :id => 'b-regform__email', :whidth => '231px', :size => false
+      .b-topcol-rightcol
+        .b-regform-button-container
+          = f.submit 'Повторить отправку подтверждения регистрации' , :class => 'rc10 inlineBlock b-regform__button', :style => 'height: 63px'
+          .inlineBlock.b-regform__close
+            или
+            %span.js-regform__close.inlineBlock.pseudolink-dotted
+              %span.b-pseudolink-icon>
+              закрыть
+
+    .clear
+  %span.b-bigblockcorner-container
+    %span.b-bigblockcorner-wrap
+      %span.b-bigblockcorner
