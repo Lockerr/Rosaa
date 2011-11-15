@@ -7,3 +7,70 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+var make_bindings;
+make_bindings = function() {
+  return $(".show_comments").bind("ajax:success", function(e, data, status, xhr) {
+    alert('bind');
+    $("#content").html(data);
+    return $("form#new_comment").bind("ajax:success", function(e, data, status, xhr) {
+      return $("#comments").html(data);
+    }).bind("ajax:error", function(evt, xhr, status, error) {
+      return alert(error);
+    });
+  });
+};
+
+var sign_idea = function() {
+  $(".js-registration-button, .js-regform__close").click(function() {
+    $(".js-regform").slideToggle(200);
+  });
+  $(".js-newpost-button, .js-newpost__close").click(function() {
+    $(".js-newpost-form").slideToggle(200);
+  });
+}
+
+var markup = function() {
+  $(".js-post").mouseenter(function() {
+    $this = $(this);
+    if (!$this.hasClass("b-post_state_active")) {
+      $this.addClass("b-post_state_hover");
+      $this.next().next().addClass("b-post_state_hovernext");
+    }
+  });
+
+  $(".js-post").mouseleave(function() {
+    $this = $(this);
+    $this.removeClass("b-post_state_hover");
+    $this.next().next().removeClass("b-post_state_hovernext");
+  });
+  $(".js-post-header__link").click(function() {
+    $post = $(this).parent().parent().parent();
+    toggleComments($post);
+  });
+
+  $(".js-comment__hidecomment").click(function() {
+    $post = $(this).parent().parent().parent().prev();
+    $post.next().next().addClass("b-post_state_hovernext");
+    toggleComments($post);
+  });
+
+  $(".js-post__comment-link").click(function() {
+    $post = $(this).parent().parent().parent().parent();
+    toggleComments($post);
+  });
+
+
+  function toggleComments($post) {
+    $post.next().next().toggleClass("b-post_state_hovernext");
+    $post.toggleClass("b-post_state_active").find(".b-post__author").slideToggle(200);
+    $post.find(".b-post__comments-link").toggleClass("displayNone");
+    $post.find(".b-bigblockcorner-container").slideToggle(50);
+    $post.next().slideToggle(200);
+  }
+
+
+  $(".b-");
+
+
+
+};

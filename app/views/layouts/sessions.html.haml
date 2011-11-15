@@ -5,23 +5,9 @@
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = stylesheet_link_tag 'style.css'
-    = #javascript_include_tag "jquery-1.6.2.min.js"
-    = #javascript_include_tag "rounded-corners.js"
-    = #javascript_include_tag "markup.js"
     /[if IE]
       <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
     /[if lt IE 7]
       <link rel="stylesheet" type="text/css" href="CSS/ie.css"/>
     = csrf_meta_tags
   %body
-    #user_nav
-      = render 'layouts/user_nav'
-    .l-wrap
-      = render 'layouts/header_logo'
-      = render 'layouts/top_text'
-      = render 'layouts/calculator'
-      = render 'layouts/registration'
-      = #render #Idea.all(:limit => 5, :order => 'created_at desc')
-      = render 'layouts/new_idea'
-      = render 'layouts/footer'
-      = yield

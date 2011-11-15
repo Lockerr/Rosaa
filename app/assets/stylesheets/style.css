@@ -244,6 +244,8 @@ a.b-toptext-lead__link:hover {
 	width: 27%;
 	margin-right: 3%;
 	position: relative;
+  top: 9px;
+
 }
 .b-topcol-doublecol {
 	float: left;
@@ -456,7 +458,7 @@ a.b-toptext-lead__link:hover {
 
 /* Posts */
 .b-posts {
-	padding-bottom: 30px;
+
 	margin-top: 1px;
 	position: relative;
 }
@@ -590,7 +592,7 @@ a.b-toptext-lead__link:hover {
 }
 .b-post__comment-link {
 	position: relative;
-	left: 4.667em;
+	left: 0.667em;
 	line-height: 1;
 	color: #ff0000;
 	vertical-align: top;
@@ -616,41 +618,6 @@ a.b-toptext-lead__link:hover {
 .b-post .b-bigblockcorner {
 	background: url('b-bigblockcorner.png') no-repeat 0 -30px;
 	height: 17px !important;
-}
-/* b-comment */
-.b-comment {
-	display: none;
-	position: relative;
-	background: #fff;
-	zoom: 1;
-	z-index: 3;
-}
-.b-comment-content {
-	margin-left: 6%;
-	font-size: 1.125em;
-	padding-top: 1.778em;
-}
-.b-comment__header {
-	text-transform: uppercase;
-}
-.b-comment-text {
-	margin-top: 1em;
-	margin-bottom: 2em;
-	background: gold;
-}
-.b-comment__toggle_selected_true {
-	color: #808285 !important;
-}
-.b-comment__hidecomment {
-	font-size: 0.667em;
-	padding-bottom: 3.667em;
-	color: #939598;
-}
-.b-comment__hidecomment .pseudolink-dotted {
-	color: #939598;
-}
-.b-comment__hidecomment .pseudolink-dotted:hover {
-	color: #000;
 }
 
 

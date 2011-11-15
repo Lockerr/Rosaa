@@ -1,0 +1,2 @@
+$("#content").html("<%= escape_javascript (render :partial => "show", :page => params[:page])  %>");
+$(".pagination a").attr("data-remote", "true");

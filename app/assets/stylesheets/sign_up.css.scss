@@ -1,28 +1,31 @@
-input, textarea {
-    margin-top: 5px;
-    margin-bottom: 15px;
-    margin-right: 15px;
-    padding: 10px;
-    padding-left: 15px;
-    height: 32px;
-    min-width: 32px;
-    border-radius: 32px 32px 32px 32px;
-    border: solid 3px #EFEFEF;
-    background: #f0f0f0;
-    //box-shadow: inset 0 0 3px #000000;
-    font-size: 150%;
-    outline-style: none;
-    cursor: pointer;
-    &.submit {
-        padding-top: 8px;
-        padding-left: 10px;
-        height: 44px;
-        background: url('assets/b-post-karma.gif') no-repeat 7px -14px;
-            background-color: red;
-    }
-    &.check_box {
-        height: 13px;
-    }
+.b-regform-form {
+  outline-style: none;
+
+  .b-textinput {
+      margin-top: 5px;
+      margin-bottom: 15px;
+      margin-right: 15px;
+      padding: 10px;
+      padding-left: 15px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 32px 32px 32px 32px;
+
+      //box-shadow: inset 0 0 3px #000000;
+      font-size: 150%;
+      outline-style: none;
+      cursor: pointer;
+      &.submit {
+          padding-top: 8px;
+          padding-left: 10px;
+          height: 44px;
+          background: url('assets/b-post-karma.gif') no-repeat 7px -14px;
+              background-color: red;
+      }
+      &.check_box {
+          height: 13px;
+      }
+  }
 }
 
 textarea {
@@ -32,12 +35,11 @@ textarea {
 form {
     padding: 10px;
     padding-left: 20px;
-    background-color: #E7F1F7;
     border-radius: 15px 0px 15px 6px;
 }
 
 label {
-  font-size: 150%;
+  font-size: 130%;
     &.attention {
         color: red;
     }
@@ -50,12 +52,43 @@ label {
     font-size: 32px;
     color: red;
 }
-input[class="vote"] {
-    background: url('b-post-karma.gif') no-repeat 7px -14px;
+
+input {
     background-color: red;
+    border-radius: 32px 32px 32px 32px;
+    padding-top: 8px;
+    padding-left: 10px;
+    background-color: red;
+    height: 30px;
+    min-width: 30px;
+    border:1px solid white;
+
+}
+input[class="vote"] {
+    background: url('b-post-karma.gif') no-repeat center -12px;
+    background-color: red;
+
 }
 input[class="devote"] {
-    background: url('b-post-karma.gif') no-repeat 7px 11px;
+    background: url('b-post-karma.gif') no-repeat center 12px;
     background-color: red;
+
+}
+
+#user_nav {
+  right: 10px;
+  position: absolute;
+  width: 359px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #E6E6E6;
+  border-radius: 15px 0px 15px 6px;
+  #login_tab {
+
+    text-decoration: underline;
+    color: red;
+    cursor: pointer;
+  }
+
 }
 

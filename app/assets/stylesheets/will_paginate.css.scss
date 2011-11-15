@@ -1,6 +1,4 @@
 .pagination {
-    margin-top: 5px;
-    margin-bottom: 5px;
     border: none;
     text-align: center;
     padding: 1em;
@@ -27,7 +25,7 @@
     }
 
     .current {
-
+        margin-top: -4px;
         border-color: #bbb;
         background-color: red;
         color: white;

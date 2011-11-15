@@ -7,7 +7,7 @@
       .b-post__text
         = idea.body
       .b-post__author
-        №541 //
+        = "# #{idea.id} //"
         = idea.created_at.strftime('%d %B %Y %H:%M')
         от
         %a{:href => "#"}
@@ -15,22 +15,33 @@
     .b-post-rightcol
       = button_to '', vote_idea_path(idea), :remote => true, :method => :post, :class => 'vote'
       .inlineBlock.b-post-karma__amount{:id => "idea_#{idea.id}"}
-        = idea.likes.count
+        = idea.likes.count - idea.dislikes.count
       = button_to '', devote_idea_path(idea), :remote => true, :class => 'devote'
       .b-post-karma__votes
         Голосов:
         = idea.votes.count
-        %span.b-post__comment-link
-          %span.js-post__comment-link.inlineBlock.pseudolink-dotted Комментировать
-          ↓
+        Комментариев
+        = idea.comments.count
+        - if idea.comments.any?
+          %span.b-post__comments-link
+            %span
+              = link_to 'Комментарии', idea_path(idea),:class => 'show_comments' , :remote => true
+              ↓
+        - else
+          %span.b-post__comment-link
+            %span.js-post__comment-link.inlineBlock.pseudolink-dotted Комментировать
+            ↓
+
       .b-post-share
         %a{:href => "#"}
           %img{:alt => "", :src => "yaru.gif"}/
         %a{:href => "#"}
           %img{:alt => "", :src => "vk.gif"}/
         %a{:href => "#"}
-          %img{:alt => "", :src => "facebook.gif"}/
+          %img{:alt => "", :src => "assefacebook.gif"}/
     .clear
     %span.b-bigblockcorner-container
       %span.b-bigblockcorner-wrap
         %span.b-bigblockcorner
+  .js-comment.b-comment{:style => 'display: none;'}
+    =  render "comments/form", :idea => idea

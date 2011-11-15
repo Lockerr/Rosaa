@@ -17,7 +17,7 @@ gem 'unicorn'
 
 gem 'will_paginate'
 gem 'jquery-rails'
-gem 'rails3-jquery-autocomplete'
+#gem 'rails3-jquery-autocomplete'
 gem 'paperclip'
 gem 'devise'
 

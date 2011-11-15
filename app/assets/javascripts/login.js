@@ -6,7 +6,7 @@ $(document).ready(function() {
             if (data.success) {
               var amount = $('.b-registration-users__amount')[0].innerHTML
               amount = parseInt(amount) + 1
-              $('.b-registration-users__amount').html(amount);
+              $('.b-registration-users__amount').html(data.count);
               $('.b-registration-button__slogan').html('Вы присоединились');
               $('#user_nav').html(data.content);
               $(".js-regform").slideToggle(200);
@@ -25,5 +25,10 @@ $(document).ready(function() {
     window.scrollTo(xpos, ypos);
 
   });
+
+  $('.pagination a').attr('data-remote', 'true');
+
+
+
 
 });

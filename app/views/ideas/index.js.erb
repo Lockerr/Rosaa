@@ -1,0 +1,4 @@
+$("#content").html("<%= escape_javascript render :partial => "paged", :page => params[:page]  %>");
+$(".pagination a").attr("data-remote", "true");
+markup();
+make_bindings();

@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
-  before_filter :authenticate_user!, :only => [:create, :update, :delete]
+  before_filter :check_for_auth, :only => [:create, :update, :delete]
   #TODO: Comments like in habrahabr
 
   #TODO: Three steps registrations
@@ -10,7 +10,8 @@ class CommentsController < ApplicationController
 
   def index
     @commentable = find_commentable
-    @comments = @commentable.comments
+    @comments    = @commentable.comments.includes(:user).paginate(:page => params[:page]).order('id desc')
+    @idea        = Idea.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,18 +27,19 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @comment }
+      format.js { render find_commentable }
     end
   end
 
   # GET /comments/new
   # GET /comments/new.json
   def new
-    @commentable =  find_commentable
-    @comment = Comment.new
-    @comments = @commentable.comments
+    @commentable = find_commentable
+    @comment     = Comment.new
+    @comments    = @commentable.comments
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html redirect_to @commentable
       format.json { render json: @comment }
     end
   end
@@ -50,19 +52,19 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @commentable =  find_commentable
-    @comment = @commentable.comments.build params[:comment]
+    @commentable = find_commentable
+    @comment     = @commentable.comments.build params[:comment]
     @comment.user_id = current_user.id if current_user
+
+
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to :id => nil, notice: 'Comment was successfully created.' }
-        format.json { render json: @comment, status: :created, location: @comment }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        @comments = find_commentable.comments.includes(:user).paginate(:page => params[:page]).order('id desc')
+        format.html { redirect_to idea_comments_path(@commentable) }
       end
     end
+
   end
 
   # PUT /comments/1
@@ -113,5 +115,18 @@ class CommentsController < ApplicationController
       end
     end
   end
+
+  protected
+
+  def check_for_auth
+    if current_user
+      true
+    else
+      respond_to do |format|
+        format.js { render 'ideas/register'}
+      end
+    end
+  end
+
   nil
 end

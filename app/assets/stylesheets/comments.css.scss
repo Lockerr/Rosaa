@@ -1,8 +1,16 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$main_bg_color: #E7F1F7;
+$main_bg_color: #E6E6E6;
 
+form#new_comment {
+  padding: 20px;
+  padding-left: 60px;
+  background-color: $main_bg_color;
+  textarea#comment_comment {
+    backgroud-color: white;
+  }
+}
 .comment {
       background-color: $main_bg_color;
       border-radius: 12px 0px 12px 12px;
@@ -52,3 +60,5 @@ $main_bg_color: #E7F1F7;
   }
 }
 }
+
+

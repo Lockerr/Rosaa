@@ -1,0 +1,8 @@
+= form_for([idea, Comment.new],:remote => true)  do |f|
+  .field
+    = f.label :comment
+    %br/
+    = f.text_area :comment
+  .actions
+    = f.submit
+

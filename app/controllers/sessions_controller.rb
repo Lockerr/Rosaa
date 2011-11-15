@@ -3,7 +3,8 @@ class SessionsController < Devise::SessionsController
   def create
     resource = warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#failure")
     sign_in(resource_name, resource)
-    return render :json => {:success => true, :content => render_to_string(:layout => false, :partial => 'layouts/user_nav')}
+    c = User.count
+    return render :json => {:success => true, :signed_up => true, :count => c, :content => render_to_string(:layout => false, :partial => 'layouts/user_nav')}
   end
 
   def failure
@@ -13,7 +14,8 @@ class SessionsController < Devise::SessionsController
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
         sign_in(resource_name, resource)
-        return render :json => {:success => true, :content => render_to_string(:layout => false, :partial => 'layouts/user_nav')}
+        c = User.count
+        return render :json => {:success => true,:count => c, :content => render_to_string(:layout => false, :partial => 'layouts/user_nav')}
       else
         set_flash_message :notice, :inactive_signed_up, :reason => inactive_reason(resource) if is_navigational_format?
         expire_session_data_after_sign_in!

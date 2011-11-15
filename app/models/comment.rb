@@ -5,5 +5,6 @@ class Comment < ActiveRecord::Base
   has_many :comments, :as => :commentable
 
   validates_presence_of :user_id
+  self.per_page = 10
 
 end

@@ -1,12 +1,15 @@
 class IdeasController < ApplicationController
-  # GET /ideas
+
+  before_filter :check_for_auth, :only => [:vote, :devote, :create, :update, :delete]
+
   # GET /ideas.json
   def index
-    @ideas = Idea.paginate(:page => params[:page]).order('id desc')
+    @ideas = Idea.includes(:user, :comments).paginate(:page => params[:page]).order('id desc')
     @idea = Idea.new
+
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @ideas }
+      format.js
     end
   end
 
@@ -14,10 +17,13 @@ class IdeasController < ApplicationController
   # GET /ideas/1.json
   def show
     @idea = Idea.find(params[:id])
+    @comments = @idea.comments.paginate(:page => params[:page]).order('id desc')
+
+
+
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @idea }
+      format.html { render :layout => false }# show.html.erb
     end
   end
 
@@ -40,12 +46,12 @@ class IdeasController < ApplicationController
   # POST /ideas
   # POST /ideas.json
   def create
-    params[:idea][:user_id] = current_user.id
+    params[:idea][:user_id] = current_user.id if current_user
     @idea = Idea.new(params[:idea])
 
     respond_to do |format|
       if @idea.save
-        format.html { redirect_to root_path, notice: t('create.success') }
+        format.html { redirect_to root_path}
         format.json { render json: @idea, status: :created, location: @idea }
       else
         format.html { render action: "new" }
@@ -102,4 +108,17 @@ class IdeasController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  protected
+
+  def check_for_auth
+    if current_user
+      true
+    else
+      respond_to do |format|
+        format.js { render 'register'}
+      end
+    end
+  end
+
 end
