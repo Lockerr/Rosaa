@@ -21,9 +21,9 @@
             %ul
               - @idea.errors.full_messages.each do |msg|
                 %li= msg
-        = f.label :subject, :class => 'b-regform__label'
+        = f.label :body, :class => 'b-regform__label'
         %br/
-        = f.text_area :body, :class => 'b-textinput', :id => 'b-newpostform__text', :cols => 50, :rows => 5
+        = f.text_area :body, :class => 'b-textinput', :id => 'b-newpostform__text', :cols => 50, :rows => 10
     .b-topcol-rightcol
       .b-regform-button-container
         = f.submit 'ПРЕДЛОЖИТЬ' , :class => 'rc10 inlineBlock b-regform__button', :style => 'height: 63px'

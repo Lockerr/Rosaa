@@ -3,7 +3,7 @@ $(document).ready(function() {
   $('form#sign_in')
           .bind('ajax:success', function(e, data, status, xhr) {
             console.log(data);
-            if (data.success == 'true') {
+            if (data.success) {
               var amount = $('.b-registration-users__amount')[0].innerHTML
               amount = parseInt(amount) + 1
               $('.b-registration-users__amount').html(data.count);

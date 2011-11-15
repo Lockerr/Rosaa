@@ -392,6 +392,7 @@ a.b-toptext-lead__link:hover {
 	margin-right: -2.5em;
 	zoom: 1;
 	position: relative;
+
 }
 .b-regform__label {
 	font-size: 1.125em;
@@ -750,4 +751,8 @@ a.b-toptext-lead__link:hover {
 }
 .b-onepost-container .b-bigblockcorner {
 	background: url('b-bigblockcorner.png') no-repeat 0 -48px;
+}
+
+#b-newpostform__text {
+  height: 200px;
 }
