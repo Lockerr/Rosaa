@@ -2,7 +2,6 @@ class IdeasController < ApplicationController
 
   before_filter :check_for_auth, :only => [:vote, :devote, :create, :update, :delete]
 
-  # GET /ideas.json
   def index
     @ideas = Idea.includes(:user, :comments).paginate(:page => params[:page]).order('id desc')
     @idea = Idea.new
@@ -13,17 +12,14 @@ class IdeasController < ApplicationController
     end
   end
 
-  # GET /ideas/1
-  # GET /ideas/1.json
   def show
     @idea = Idea.find(params[:id])
-    @comments = @idea.comments.paginate(:page => params[:page]).order('id desc')
-
-
-
+    @comments = @idea.comments.includes(:user).paginate(:page => params[:page]).order('id desc')
 
     respond_to do |format|
-      format.html { render :layout => false }# show.html.erb
+      format.html # show.html.erb
+      format.js
+
     end
   end
 

@@ -5,6 +5,8 @@ ru:
      comment: 'Комментарий'
      submit: 'Разместить'
      update: 'разместить'
+   show:
+     comment: 'Комментарий'
  helpers:
    submit:
      comment:

@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
   acts_as_votable
-  belongs_to :commentable, :polymorphic => true
+  belongs_to :commentable, :polymorphic => true, :counter_cache => true
   belongs_to :user
   has_many :comments, :as => :commentable
 

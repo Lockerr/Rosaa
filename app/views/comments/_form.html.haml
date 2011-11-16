@@ -1,8 +1,19 @@
-= form_for([idea, Comment.new],:remote => true)  do |f|
-  .field
-    = f.label :comment
-    %br/
-    = f.text_area :comment
-  .actions
-    = f.submit
-
+.b-comment-content
+  = form_for([idea, Comment.new],:remote => true, :html => {:class => 'b-regform-form'})  do |f|
+    .b-topcol-doublecol
+      .b-textinput-wrap
+        = f.label 'Комментарий', :class => 'b-regform__label'
+        %br/
+        = f.text_area :comment,  :class => 'b-textinput', :id => 'b-newpostform__text', :rows => 10
+    .b-topcol-rightcol
+      .b-regform-button-container
+        = f.submit 'ПРЕДЛОЖИТЬ' , :class => 'rc10 inlineBlock b-regform__button', :style => 'height: 63px'
+        .inlineBlock.b-regform__close
+          или
+          %span.js-newpost__close.inlineBlock.pseudolink-dotted
+            %span.b-pseudolink-icon>
+            закрыть
+      .clear
+    %span.b-bigblockcorner-container
+      %span.b-bigblockcorner-wrap
+        %span.b-bigblockcorner

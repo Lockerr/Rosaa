@@ -10,7 +10,7 @@
       мы решим, что является самым актуальным!
   .clear
 .js-newpost-form.b-newpostform
-  = form_for(@idea, :html => {:class => 'b-regform-form'}) do |f|
+  = form_for(@idea, :html => {:class => 'b-regform-form'}, :remote => true) do |f|
     .b-topcol-doublecol
       .b-textinput-wrap
         - if @idea.errors.any?

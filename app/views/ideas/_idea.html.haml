@@ -25,7 +25,7 @@
         - if idea.comments.any?
           %span.b-post__comments-link
             %span
-              = link_to 'Комментарии', idea_path(idea),:class => 'show_comments' , :remote => true
+              = link_to 'Комментарии', idea_comments_path(idea) , :remote => true
               ↓
         - else
           %span.b-post__comment-link
@@ -34,14 +34,15 @@
 
       .b-post-share
         %a{:href => "#"}
-          %img{:alt => "", :src => "yaru.gif"}/
+          %img{:alt => "", :src => "assets/yaru.gif"}/
         %a{:href => "#"}
-          %img{:alt => "", :src => "vk.gif"}/
+          %img{:alt => "", :src => "assets/vk.gif"}/
         %a{:href => "#"}
-          %img{:alt => "", :src => "assefacebook.gif"}/
+          %img{:alt => "", :src => "assets/facebook.gif"}/
     .clear
     %span.b-bigblockcorner-container
       %span.b-bigblockcorner-wrap
         %span.b-bigblockcorner
-  .js-comment.b-comment{:style => 'display: none;'}
-    =  render "comments/form", :idea => idea
+  - if !idea.comments.any?
+    .js-comment.b-comment{:style => 'display: none'}
+      = render "comments/form", :idea => idea

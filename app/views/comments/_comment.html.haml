@@ -5,8 +5,8 @@
 .comment-title
   = comment.user.nick || comment.user.first_name || comment.user.email
 
-.date
-  = comment.created_at.strftime('%d %B %Y %H:%M')
+  .date
+    = comment.created_at.strftime('%d %B %Y %H:%M')
 
 .comment
   = comment.comment

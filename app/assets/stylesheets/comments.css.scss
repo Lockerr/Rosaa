@@ -4,11 +4,13 @@
 $main_bg_color: #E6E6E6;
 
 form#new_comment {
-  padding: 20px;
-  padding-left: 60px;
+  padding-top: 20px;
+
   background-color: $main_bg_color;
+  height: 325px;
   textarea#comment_comment {
     backgroud-color: white;
+    margin-left: 20px;
   }
 }
 .comment {
@@ -60,5 +62,13 @@ form#new_comment {
   }
 }
 }
+
+.js-newpost-form b-newpostform {
+  .b-topcol-rightcol {
+    margin-top: 40px;
+  }
+
+}
+
 
 

@@ -250,7 +250,7 @@ a.b-toptext-lead__link:hover {
 .b-topcol-doublecol {
 	float: left;
 	display: inline;
-	width: 61%;
+	width: 59%;
 	margin-left: 6%;
 	position: relative;
 }
@@ -667,12 +667,13 @@ a.b-toptext-lead__link:hover {
 	display: none;
 }
 .b-newpostform .b-topcol-doublecol {
-	padding: 2.5em 0 0;
+	padding: 1em 0 0;
 }
 .b-newpostform .b-topcol-leftcol,
 .b-newpostform .b-topcol-centercol,
 .b-newpostform .b-topcol-rightcol {
 	padding: 0.625em 0 1.75em;
+  top: 60px;
 }
 .b-newpostform .b-topcol-doublecol .b-textinput-wrap {
 	padding-right: 1.188em;

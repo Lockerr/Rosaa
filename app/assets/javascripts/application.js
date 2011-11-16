@@ -7,17 +7,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-var make_bindings;
-make_bindings = function() {
-  return $(".show_comments").bind("ajax:success", function(e, data, status, xhr) {
-    alert('bind');
-    $("#content").html(data);
-    return $("form#new_comment").bind("ajax:success", function(e, data, status, xhr) {
-      return $("#comments").html(data);
-    }).bind("ajax:error", function(evt, xhr, status, error) {
-      return alert(error);
-    });
-  });
+
+
+var make_bindings = function() {
+  $(".pagination a").attr("data-remote", "true");
+  $("form#new_comment").attr("data-remote", "true");
+
+
 };
 
 var sign_idea = function() {
@@ -27,7 +23,7 @@ var sign_idea = function() {
   $(".js-newpost-button, .js-newpost__close").click(function() {
     $(".js-newpost-form").slideToggle(200);
   });
-}
+};
 
 var markup = function() {
   $(".js-post").mouseenter(function() {
@@ -63,14 +59,12 @@ var markup = function() {
   function toggleComments($post) {
     $post.next().next().toggleClass("b-post_state_hovernext");
     $post.toggleClass("b-post_state_active").find(".b-post__author").slideToggle(200);
-    $post.find(".b-post__comments-link").toggleClass("displayNone");
     $post.find(".b-bigblockcorner-container").slideToggle(50);
     $post.next().slideToggle(200);
   }
 
 
   $(".b-");
-
 
 
 };

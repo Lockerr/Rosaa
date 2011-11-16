@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
   #TODO: Comments like in habrahabr
 
   #TODO: Three steps registrations
-  #TODO: 1. email, pass, pass
   #TODO: 2. fake form like in alpha
 
   def index
@@ -14,8 +13,7 @@ class CommentsController < ApplicationController
     @idea        = Idea.new
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @comments }
+      format.js
     end
   end
 
@@ -54,14 +52,15 @@ class CommentsController < ApplicationController
   def create
     @commentable = find_commentable
     @comment     = @commentable.comments.build params[:comment]
-    @comment.user_id = current_user.id if current_user
+    @comment.user_id = current_user.id
 
 
 
     respond_to do |format|
       if @comment.save
-        @comments = find_commentable.comments.includes(:user).paginate(:page => params[:page]).order('id desc')
+        @comments = @commentable.comments.includes(:user).paginate(:page => params[:page]).order('id desc')
         format.html { redirect_to idea_comments_path(@commentable) }
+        format.js
       end
     end
 
