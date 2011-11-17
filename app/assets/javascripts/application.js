@@ -7,8 +7,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
-
 var make_bindings = function() {
   $(".pagination a").attr("data-remote", "true");
   $("form#new_comment").attr("data-remote", "true");

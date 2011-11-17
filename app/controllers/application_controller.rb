@@ -9,4 +9,6 @@ class ApplicationController < ActionController::Base
 end
 
 
-#TODO:
+#TODO:   Валидация
+#TODO:   Кнопки регистрации
+#TODO:  Эхо

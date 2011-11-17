@@ -229,7 +229,7 @@ a.b-toptext-lead__link:hover {
 	float: left;
 	display: inline;
 	width: 27%;
-	margin-left: 6%;
+	margin-left: 4%;
 	position: relative;
 }
 .b-topcol-centercol {
@@ -380,7 +380,7 @@ a.b-toptext-lead__link:hover {
 	border: 0;
 }
 .b-regform-form .b-textinput-wrap {
-	margin-right: 2.5em;
+  margin: 5px;
 	position: relative;
 	zoom: 1;
 }
@@ -388,8 +388,7 @@ a.b-toptext-lead__link:hover {
 	padding: 0 1.188em 0 5%;
 }
 .b-regform-form .b-textinput {
-	width: 100%;
-	margin-right: -2.5em;
+	width: 96%;
 	zoom: 1;
 	position: relative;
 

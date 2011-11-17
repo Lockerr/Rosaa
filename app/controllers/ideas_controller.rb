@@ -29,7 +29,7 @@ class IdeasController < ApplicationController
     @idea = Idea.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new.html.haml
       format.json { render json: @idea }
     end
   end

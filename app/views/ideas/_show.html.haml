@@ -1,0 +1,7 @@
+= render @idea
+= will_paginate @comments
+= render @comments
+= will_paginate @comments
+.js-comment.b-comment
+  = render 'comments/form', :idea => @idea
+
