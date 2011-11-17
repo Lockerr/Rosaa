@@ -27,7 +27,7 @@ class Devise::PasswordsController < ApplicationController
     self.resource = resource_class.new
     resource.reset_password_token = params[:reset_password_token]
     respond_to do |format|
-      format.html {render :partial => 'reset_password', :layout => :application}
+      format.html {render :partial => 'reset_password'}
     end
   end
 
