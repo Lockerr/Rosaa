@@ -39,11 +39,9 @@ class Devise::PasswordsController < ApplicationController
       flash_message = resource.active_for_authentication? ? :updated : :updated_not_active
       set_flash_message(:notice, flash_message) if is_navigational_format?
       sign_in(resource_name, resource)
-      respond_to do |format|
-        format.js
-      end
+      redirect_to root_path
     else
-      respond_with_navigational(resource){ render_with_scope :edit }
+      redirect_to root_path
     end
   end
 
