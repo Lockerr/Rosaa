@@ -187,6 +187,10 @@ a.b-toptext-lead__link:visited {
 	color: #fff;
 	text-decoration: underline;
 }
+
+a.current.b-toptext-lead__link {
+  color: red;
+}
 a.b-toptext-lead__link:hover {
 	color: #ff0000;
 }

@@ -14,12 +14,15 @@ gem 'russian'
 gem 'unicorn'
 # Gems used only for assets and not required
 # in production environments by default.
-
+gem 'nokogiri'
 gem 'will_paginate'
 gem 'jquery-rails'
 #gem 'rails3-jquery-autocomplete'
 gem 'paperclip'
 gem 'devise'
+gem 'htmlentities'
+gem 'cubus-settingslogic'
+
 
 group :assets do
   gem 'sass-rails'
@@ -31,6 +34,7 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-ext'
   gem 'passenger'
+  gem 'hirb-unicode'
 end
 
 group :development, :test do

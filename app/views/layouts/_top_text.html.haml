@@ -1,29 +1,22 @@
 .b-toptext
   .b-toptext-lead
-    %span.b-highlight Бензин
+    %a.current.b-toptext-lead__link#fuel{:href => "#"} Бензин
     +
-    %a.b-toptext-lead__link{:href => "#"} налог
+    %a.b-toptext-lead__link#loan{:href => "#"} налог
     +
-    %a.b-toptext-lead__link{:href => "#"} дороги
+    %a.b-toptext-lead__link#road{:href => "#"} дороги
     +
-    %a.b-toptext-lead__link{:href => "#"} осаго
+    %a.b-toptext-lead__link#osago{:href => "#"} осаго
     +
-    %a.b-toptext-lead__link{:href => "#"} гибдд техосмотр
+    %a.b-toptext-lead__link#tech{:href => "#"} гибдд техосмотр
     \= ?
-  .b-toptext-text
-    Цена за
-    %span.b-highlight литр
-    уже скоро будет
-    = succeed "." do
-      %span.b-highlight больше 30 руб
-    При
-    этом мы —
-    = succeed "!" do
-      %span.b-highlight нефтедобывающая страна
-    = succeed "\u{410}\u{43a}\u{446}\u{438}\u{437}" do
-      %br/
-    уже включили в цену, но транспортный
-    налог оставили! И акциз будет ещё
-    выше!
-    %br/
-    %span.b-highlight Цена на бензин для россиян должна быть ниже!
+  .b-toptext-text#fuel
+    = Settings.layout.header.fuel.html_safe
+  .b-toptext-text#loan
+    = Settings.layout.header.loan.html_safe
+  .b-toptext-text#road
+    = Settings.layout.header.road.html_safe
+  .b-toptext-text#osago
+    = Settings.layout.header.osago.html_safe
+  .b-toptext-text#tech
+    = Settings.layout.header.tech.html_safe

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "comments/new.html.erb" do
+describe "comments/new.html.haml" do
   before(:each) do
     assign(:comment, stub_model(Comment,
       :comment => "MyText",

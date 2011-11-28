@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "ideas/edit.html.erb" do
+describe "ideas/edit.html.haml" do
   before(:each) do
     @idea = assign(:idea, stub_model(Idea,
       :user_id => 1,
