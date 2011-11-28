@@ -10,7 +10,10 @@
 var make_bindings = function() {
   $(".pagination a").attr("data-remote", "true");
   $("form#new_comment").attr("data-remote", "true");
-
+  $('.to_login').click(function() {
+    $(".js-regform").show(200);
+    window.scrollTo(100, 200);
+  });
 
 };
 

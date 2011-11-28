@@ -7,5 +7,5 @@
   =# link_to t('devise.sessions.sign_in.title'), new_user_session_path, :remote => true, :id => 'login_tab'
 
   = t('first_time')
-  = link_to t('sign_up'), new_user_registration_path
+  = link_to t('sign_up'), '#', :class => :to_login
   = t('takes_a_minute')
