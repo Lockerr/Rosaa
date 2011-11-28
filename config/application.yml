@@ -4,7 +4,7 @@ defaults: &defaults
       fuel: Цена за <span class="b-highlight">литр</span> уже скоро будет <span class="b-highlight">больше 30 руб</span>. При этом мы — <span class="b-highlight">нефтедобывающая страна</span>!</br> Акциз уже включили в цену, но транспортный налог оставили! И акциз будет ещё выше! </br> <span class="b-highlight">Цена на бензин для россиян должна быть ниже</span>!
       loan: Размер  <span class="b-highlight">налога на прибыль</span> уже сейчас <span class="b-highlight">больше 13%</span>. При этом мы — <span class="b-highlight">нефтедобывающая страна</span>!</br> Акциз уже включили в цену, но транспортный налог оставили! И акциз будет ещё выше! </br> <span class="b-highlight">Цена на бензин для россиян должна быть ниже</span>!
       osago: Размер  <span class="b-highlight">налога на прибыль</span> уже сейчас <span class="b-highlight">больше 13%</span>. При этом мы — <span class="b-highlight">нефтедобывающая страна</span>!</br> Акциз уже включили в цену, но транспортный налог оставили! И акциз будет ещё выше! </br> <span class="b-highlight">Цена на бензин для россиян должна быть ниже</span>!
-      tech: <span class="b-highlight">Да вроде все в порядке :)</span>!
+      tech: <span class="b-highlight">Если пункт есть, то что-то не в порядке</span>!
       road: Длина всех  <span class="b-highlight">дорог</span> составляет всего <span class="b-highlight">0.98 милионов</span> километров. В США - 6,51. А какой там налог в США? Однако наши политики твердят о невозможности поддверживать огромную дорожную инфраструктуру в удовлетворительном виде.</br> <span class="b-highlight">Дороги должны быть лучше</span>!
 
 development:
