@@ -1,0 +1,75 @@
+// Place all the styles related to the calculator controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.region_combo {
+  height: 32px;
+  border-radius: 32px;
+  border: 1px solid #ABADB3;
+  padding: 12px;
+  font-size: large;
+  width: 320px;
+  float: left;
+  background-image: url("icon/lens.png");
+  background-repeat: no-repeat;
+  background-position: 10px;
+  padding-left: 58px;
+
+}
+
+.ui-autocomplete-input { margin: 0; padding: 0.48em 0 0.47em 0.45em; }
+ul.ui-autocomplete {
+
+  background: white;
+  width: 250px;
+    a.ui-corner-all {
+
+  }
+
+}
+button[type=button], .nabla {
+  width: 32px;
+  height: 32px;
+  float: left;
+}
+.region_collection {
+  position: absolute;
+  max-height: 200px;
+  z-index: 10;
+  border: 1px solid #ABADB3;
+  overflow: auto;
+  background: white;
+  width: 269px;
+  display: none;
+  border-top: none;
+  top: 438px;
+  left: 182px;
+
+  .region:hover {
+    background-color: #ABADB3;
+    cursor: pointer;
+    color: white;
+
+    }
+
+}
+
+.power {
+  height: 32px;
+  border-radius: 32px;
+  border: 1px solid #ABADB3;
+  padding: 12px;
+  font-size: large;
+  width: 90px;
+  float: left;
+  margin-left: 105px;
+  text-align: center;
+}
+
+img.cross {
+  top: -37px;
+  left: 358px;
+  position: relative;
+  z-index: 1
+}
+

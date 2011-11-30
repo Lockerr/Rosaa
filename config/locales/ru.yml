@@ -1,4 +1,6 @@
 ru:
+  no_data: 'Нет данных'
+  not_located: 'Ваше местоположение не определено'
   hello: 'Привет'
   ozenka: "Оценка"
   content:

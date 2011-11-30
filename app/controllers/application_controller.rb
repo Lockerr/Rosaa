@@ -8,26 +8,26 @@ class ApplicationController < ActionController::Base
 
   def get_location
     # текущий айпишник
-    ip = request.env["HTTP_X_FORWARDED_FOR"]
-    ip = "195.178.16.11"
+    #ip = request.env["HTTP_X_FORWARDED_FOR"]
     #ip = request.ip
     # ответ геосервера
-    geo_response = Net::HTTP.get_response(URI.parse("http://ipgeobase.ru:7020/geo?ip=#{ip}")).body
+    #ip = 12
+    #geo_response = Net::HTTP.get_response(URI.parse("http://ipgeobase.ru:7020/geo?ip=#{ip}")).body
 
     # распарсить xml
-    geo_data = Nokogiri::XML.parse(geo_response)
+    #geo_data = Nokogiri::XML.parse(geo_response)
 
     # текущий регион
-    region = geo_data.xpath('//city').children.text
+    #region = geo_data.xpath('//city').children.text
 
-    logger.info region
+    #logger.info region
     # html конвертер
-    coder = HTMLEntities.new
+    #coder = HTMLEntities.new
 
     # перекодировать
-    @geo = coder.decode(region)
+    @geo = "" #coder.decode(region)
 
-    # список регионов
+
   end
 
 end

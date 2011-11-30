@@ -1,17 +1,38 @@
 .b-calculator
-  .b-calculator__title
-    Узнай, сколько
-    %span.b-highlight ты заплатишь за год
-  .b-topcol-leftcol
-    = @geo
-  .b-topcol-centercol
-    123
-  .b-topcol-rightcol
-    .b-calculator-nalog
-      %span.b-calculator-nalog__title Твой налог
-      %span.inlineBlock.b-highlight.b-calculator-nalog__amount 18750
-      %span.inlineBlock.b-calculator-nalog__rub рублей
+  = form_for 'calculator' do |f|
+    .b-calculator__title
+      Узнай, сколько
+      %span.b-highlight ты заплатишь за год
+    .b-topcol-leftcol
+      .title{:style => 'margin-top: -7px;margin-bottom: 7px;margin-left: 22px;'}
+        Регион:
+      - if @geo == ""
+        = f.text_field 'redion_id', :class => 'region_combo', :placeholder => 'Наименование региона', :result => 0
+        = image_tag ('icon/cross_blue.png'), :class => 'cross'
+        - regions = Region.all.collect{|p| [ p.name, p.id ] }
+      - else
+        = @geo
+
+
+    .b-topcol-centercol
+      .title{:style => 'margin-top: -7px;margin-bottom: 7px;margin-left: 105px;'}
+        Мощность авто:
+      = f.text_field "tax_id", :value => 250, :class => 'power'
+    .b-topcol-rightcol
+      .b-calculator-nalog
+        %span.b-calculator-nalog__title
+          Твой налог
+
+        %span.inlineBlock.b-highlight.b-calculator-nalog__amount 18750
+        %span.inlineBlock.b-calculator-nalog__rub рублей
   .clear
   %span.b-bigblockcorner-container
     %span.b-bigblockcorner-wrap
       %span.b-bigblockcorner
+
+
+.region_collection
+  - regions = Region.all.collect{|p| [ p.name, p.id ] }
+  - for region in regions
+    .region{:id => region[1], :name => region[0]}
+      = region[0]
