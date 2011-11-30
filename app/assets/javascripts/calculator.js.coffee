@@ -4,7 +4,7 @@
 
 region_combo = []
 region_combo_new = []
-
+current_region = 0
 
 $ ->
   $('input.region_combo').observe_field 0.5,->
@@ -23,6 +23,7 @@ $ ->
           console.log($(this).select('div'))
           $('.region_collection').hide()
           if parseInt($(this).attr('id'))
+            current_region = parseInt($(this).attr('id'))
             data = 'region=' + $(this).attr('id') + '&power=' + $('input.power').attr('value')
             $.ajax(
               url: 'calculator/show',
@@ -40,6 +41,19 @@ $ ->
 $ ->
   $('select#calculator_region').observe_field 0.5,->
       $('input.region_combo').attr('value', $('select#calculator_region option:selected').html())
+
+$ ->
+  $('input.power').observe_field 0.5, ->
+    if $('input.region_combo').val() != ''
+      if parseInt($('input.power').attr('value'))
+        data = 'region=' + current_region + '&power=' + $('input.power').attr('value')
+        $.ajax(
+          url: 'calculator/show',
+          method: 'get'
+          data: data
+        ).done (msg) ->
+          $('.b-calculator-nalog__amount').html(msg)
+
 
 
 $ ->
