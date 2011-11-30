@@ -52,11 +52,9 @@ label {
 }
 
 input[class=vote], input[class=devote] {
-    background-color: red;
     border-radius: 32px 32px 32px 32px;
     padding-top: 8px;
     padding-left: 10px;
-    background-color: red;
     height: 30px;
     min-width: 30px;
     border:1px solid white;
@@ -64,10 +62,12 @@ input[class=vote], input[class=devote] {
 }
 input[class="vote"] {
     background: url('b-post-karma.gif') no-repeat center -12px;
+    background-color: red;
 
 }
 input[class="devote"] {
     background: url('b-post-karma.gif') no-repeat center 12px;
+    background-color: red;
 
 }
 
