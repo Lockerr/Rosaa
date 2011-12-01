@@ -6,3 +6,7 @@ $(document).ready ->
     $('.b-toptext-text#' + $(this).attr('id')).show()
     $(".b-toptext-lead__link").removeClass('current')
     $(this).addClass('current')
+  $('.b-header-logo__rosaa').click ->
+
+    $.get '', (data) ->
+      $('body').html(data)

@@ -8,10 +8,10 @@
         Регион:
       - if @geo == ""
         = f.text_field 'redion_id', :class => 'region_combo', :placeholder => 'Наименование региона', :result => 0
+      - else
+        = f.text_field 'redion_id', :class => 'region_combo', :placeholder => 'Наименование региона', :result => 0, :value => @geo
         = image_tag ('icon/cross_blue.png'), :class => 'cross'
         - regions = Region.all.collect{|p| [ p.name, p.id ] }
-      - else
-        = @geo
 
 
     .b-topcol-centercol

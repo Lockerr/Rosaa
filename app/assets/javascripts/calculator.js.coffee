@@ -5,8 +5,25 @@
 region_combo = []
 region_combo_new = []
 current_region = 0
+current = []
 
 $ ->
+  if $('input.region_combo').val() != ''
+    region_combo = $('.region_collection .region')
+    $.each region_combo, (index, value) ->
+      if region_combo[index].innerHTML.match($('input.region_combo').val())
+        current.push region_combo[index]
+        if current.length = 1
+          if parseInt($(this).attr('id'))
+              current_region = parseInt($(this).attr('id'))
+              data = 'region=' + $(this).attr('id') + '&power=' + $('input.power').attr('value')
+              $.ajax(
+                url: 'calculator/show',
+                method: 'get'
+                data: data
+              ).done (msg) ->
+                $('.b-calculator-nalog__amount').html(msg)
+
   $('input.region_combo').observe_field 0.5,->
     region_combo_new = []
     $.each region_combo, (index, value) ->
