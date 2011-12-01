@@ -4,7 +4,7 @@
       Узнай, сколько
       %span.b-highlight ты заплатишь за год
     .b-topcol-leftcol
-      .title{:style => 'margin-top: -7px;margin-bottom: 7px;margin-left: 22px;'}
+      .title
         Регион:
       - if @geo == ""
         = f.text_field 'redion_id', :class => 'region_combo', :placeholder => 'Наименование региона', :result => 0
@@ -15,7 +15,7 @@
 
 
     .b-topcol-centercol
-      .title{:style => 'margin-top: -7px;margin-bottom: 7px;margin-left: 105px;'}
+      .title
         Мощность авто:
       = f.text_field "tax_id", :value => 250, :class => 'power'
     .b-topcol-rightcol

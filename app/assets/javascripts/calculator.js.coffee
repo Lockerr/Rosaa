@@ -32,12 +32,6 @@ $ ->
             ).done (msg) ->
               $('.b-calculator-nalog__amount').html(msg)
 
-
-
-
-
-
-
 $ ->
   $('select#calculator_region').observe_field 0.5,->
       $('input.region_combo').attr('value', $('select#calculator_region option:selected').html())

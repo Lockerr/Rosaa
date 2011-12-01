@@ -47,17 +47,15 @@
   var make_bindings = function() {
     $(".pagination a").attr("data-remote", "true");
     $("form#new_comment").attr("data-remote", "true");
-    $('.to_login').click(function() {
-      $(".js-regform").show(200);
-      window.scrollTo(100, 200);
-      $('.rc10.inlineBlock.b-regform__button#js_login_form').attr('value', 'ВОЙТИ');
-    });
+
 
   };
 
   var sign_idea = function() {
     $(".js-registration-button, .js-regform__close").click(function() {
+      $('.rc10.inlineBlock.b-regform__button#js_login_form').attr('value', 'ПРИСОЕДИНИТЬСЯ');
       $(".js-regform").slideToggle(200);
+
     });
     $(".js-newpost-button, .js-newpost__close").click(function() {
       $(".js-newpost-form").slideToggle(200);

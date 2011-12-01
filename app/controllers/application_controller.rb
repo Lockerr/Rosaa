@@ -7,25 +7,31 @@ class ApplicationController < ActionController::Base
   protected
 
   def get_location
-    # текущий айпишник
-    #ip = request.env["HTTP_X_FORWARDED_FOR"]
-    #ip = request.ip
-    # ответ геосервера
-    #ip = 12
-    #geo_response = Net::HTTP.get_response(URI.parse("http://ipgeobase.ru:7020/geo?ip=#{ip}")).body
+    if session[:geo]
+      @geo = session[:geo]
+    else
+      # текущий айпишник
+      ip = request.env["HTTP_X_FORWARDED_FOR"]
+      ip = request.ip
 
-    # распарсить xml
-    #geo_data = Nokogiri::XML.parse(geo_response)
+      geo_response = Net::HTTP.get_response(URI.parse("http://ipgeobase.ru:7020/geo?ip=#{ip}")).body
 
-    # текущий регион
-    #region = geo_data.xpath('//city').children.text
+      # распарсить xml
+      geo_data = Nokogiri::XML.parse(geo_response)
 
-    #logger.info region
-    # html конвертер
-    #coder = HTMLEntities.new
+      # текущий регион
+      region = geo_data.xpath('//city').children.text
 
-    # перекодировать
-    @geo = "" #coder.decode(region)
+      # html конвертер
+      coder = HTMLEntities.new
+
+      # перекодировать
+      @geo = coder.decode(region)
+      if @geo != ''
+        session[:geo] = @geo
+      end
+    end
+
 
 
   end
@@ -36,3 +42,4 @@ end
 #TODO:   Валидация
 #TODO:   Кнопки регистрации
 #TODO:  Эхо
+#TODO: КНопка home

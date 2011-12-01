@@ -79,12 +79,23 @@ input[class="devote"] {
   padding: 10px;
   background-color: #E6E6E6;
   border-radius: 15px 0px 15px 6px;
-  #login_tab {
+  #login_tab, #register_tab {
 
     text-decoration: underline;
     color: red;
     cursor: pointer;
+
   }
+
+  #register_tab {
+    float: left;
+  }
+
+  #first_time_text {
+    float: left;
+  }
+
+
 
 }
 
