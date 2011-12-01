@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %title Rossa
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = stylesheet_link_tag 'style.css'
+    /[if IE]
+      <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    /[if lt IE 7]
+      <link rel="stylesheet" type="text/css" href="CSS/ie.css"/>
+    = csrf_meta_tags
+  %body
+    #user_nav
+      = render 'layouts/user_nav'
+    .l-wrap
+      = render 'layouts/header_logo'
+      = render 'layouts/registration' if !current_user
+      #content
+        = yield
+      = render 'layouts/footer'
+
+
+

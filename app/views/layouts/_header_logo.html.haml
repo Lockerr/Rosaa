@@ -1,6 +1,6 @@
 .b-header
   .b-header-logo
-    %a.b-header-logo-link{:href => "#"}
+    %a.b-header-logo-link{:href => root_path}
       %span.b-header-logo__name
         %span.b-header-logo__rosaa> ROSAA.
         NET
@@ -9,10 +9,13 @@
   .b-header-menu
     %ul.b-header-menu-list
       %li.inlineBlock.b-header-menu-list-item
-        %a.b-header-menu__link{:href => "#"} О нас
+        = link_to 'О нас', index_path('about') , :class => 'b-header-menu__link'
       %li.inlineBlock.b-header-menu-list-item
-        %a.b-header-menu__link{:href => "#"} Зачем это мне?
+        %a.b-header-menu__link
+          = link_to 'Зачем это мне?', index_path('what_for'), :class => 'b-header-menu__link'
       %li.inlineBlock.b-header-menu-list-item
-        %a.b-header-menu__link{:href => "#"} Твоя ИНИЦИАТИВА
+        %a.b-header-menu__link
+          = link_to 'Твоя ИНИЦИАТИВА', index_path('initiation'), :class => 'b-header-menu__link'
       %li.inlineBlock.b-header-menu-list-item
-        %a.b-header-menu__link{:href => "#"} Что делать?
+        %a.b-header-menu__link
+          = link_to 'Что делать?', index_path("what_we_gonna_do"), :class => 'b-header-menu__link'

@@ -28,7 +28,9 @@ $ ->
     region_combo_new = []
     $.each region_combo, (index, value) ->
       if region_combo[index].innerHTML.match($('input.region_combo').val())
-        if (region_combo[index].innerHTML.trim() == $('input.region_combo').val().trim())
+        first = $.trim(region_combo[index].innerText);
+        second = $('input.region_combo').val()
+        if (first == $.trim($('input.region_combo').val()))
           $('.region_collection').hide()
         else
           if $('input.region_combo').val() != ''

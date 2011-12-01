@@ -3,6 +3,7 @@ Rossa::Application.routes.draw do
 
   devise_for :users, :controllers => {:sessions => 'sessions'}
   resources :calculator
+  resources :index
   resources :ideas do
     resources :comments
     member do

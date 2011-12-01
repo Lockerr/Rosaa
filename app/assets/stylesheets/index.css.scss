@@ -1,0 +1,27 @@
+// Place all the styles related to the index controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.about {
+  text-align: justify;
+  background-color: #e6e6e6;
+  padding: 25px;
+  padding-left: 47px;
+  h3 {
+    padding-bottom: 12px;
+  }
+  p {
+    padding-bottom: 9px;
+  }
+  &ul, &li {
+    margin-left: 10px;
+    list-style-type: square;
+    padding-right: 250px;
+  }
+
+  h4 {
+    padding-bottom: 12px;
+    padding-top: 12px;
+  }
+
+}
