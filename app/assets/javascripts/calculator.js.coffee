@@ -11,7 +11,7 @@ $ ->
   if $('input.region_combo').val() != ''
     region_combo = $('.region_collection .region')
     $.each region_combo, (index, value) ->
-      if region_combo[index].innerHTML.match($('input.region_combo').val())
+      if region_combo[index].innerHTML.toLowerCase().match($('input.region_combo').val().toLowerCase())
         current.push region_combo[index]
         if current.length = 1
           if parseInt($(this).attr('id'))
@@ -27,7 +27,7 @@ $ ->
   $('input.region_combo').observe_field 0.5,->
     region_combo_new = []
     $.each region_combo, (index, value) ->
-      if region_combo[index].innerHTML.match($('input.region_combo').val())
+      if region_combo[index].innerHTML.toLowerCase().match($('input.region_combo').val().toLowerCase())
         first = $.trim(region_combo[index].innerText);
         second = $('input.region_combo').val()
         if (first == $.trim($('input.region_combo').val()))

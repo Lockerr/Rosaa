@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def get_location
+    reset_session
+
     if session[:geo]
       @geo = session[:geo]
     else
@@ -15,20 +17,24 @@ class ApplicationController < ActionController::Base
       ip = request.env["HTTP_X_FORWARDED_FOR"]
       ip = request.ip
 
+      begin
+        geo_response = Net::HTTP.get_response(URI.parse("http://ipgeobase.ru:7020/geo?ip=#{ip}")).body
 
-      geo_response = Net::HTTP.get_response(URI.parse("http://ipgeobase.ru:7020/geo?ip=#{ip}")).body
+        # распарсить xml
+        geo_data = Nokogiri::XML.parse(geo_response)
 
-      # распарсить xml
-      geo_data = Nokogiri::XML.parse(geo_response)
+        # текущий регион
+        region = geo_data.xpath('//region').children.text
 
-      # текущий регион
-      region = geo_data.xpath('//region').children.text
+        # html конвертер
+        coder = HTMLEntities.new
 
-      # html конвертер
-      coder = HTMLEntities.new
+        # перекодировать
+        @geo = coder.decode(region)
+      rescue
+        @geo = '??????'
+      end
 
-      # перекодировать
-      @geo = coder.decode(region)
       if @geo != ''
         session[:geo] = @geo
       end
@@ -41,7 +47,4 @@ class ApplicationController < ActionController::Base
 end
 
 
-#TODO:   Валидация
-#TODO:   Кнопки регистрации
 #TODO:  Эхо
-#TODO: КНопка home
