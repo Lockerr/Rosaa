@@ -6,7 +6,6 @@
     .b-topcol-leftcol
       .title
         Регион:
-        = @geo + '!'
       - if @geo == ""
         = f.text_field 'redion_id', :class => 'region_combo', :placeholder => 'Наименование региона', :result => 0
       - else
