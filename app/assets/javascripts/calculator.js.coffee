@@ -24,22 +24,22 @@ $ ->
               ).done (msg) ->
                 $('.b-calculator-nalog__amount').html(msg)
 
-  $('input.region_combo').observe_field 0.5,->
+  $('input.region_combo').observe_field 0.2,->
     region_combo_new = []
     $.each region_combo, (index, value) ->
       if region_combo[index].innerHTML.toLowerCase().match($('input.region_combo').val().toLowerCase())
-        first = $.trim(region_combo[index].innerText);
-        second = $('input.region_combo').val()
-        if (first == $.trim($('input.region_combo').val()))
+        first = $.trim(region_combo[index].innerText).toLowerCase()
+        second = $.trim($('input.region_combo').val()).toLowerCase()
+        if (first == second)
           $('.region_collection').hide()
         else
-          if $('input.region_combo').val() != ''
+          if (second != '')
             $('.region_collection').show()
-        region_combo_new.push region_combo[index]
-        $('.region_collection').html(region_combo_new)
+            region_combo_new.push region_combo[index]
+            $('.region_collection').html(region_combo_new)
+
         $('.region').click ->
           $('input.region_combo').val($(this).attr('name'))
-          console.log($(this).select('div'))
           $('.region_collection').hide()
           if parseInt($(this).attr('id'))
             current_region = parseInt($(this).attr('id'))
@@ -50,6 +50,7 @@ $ ->
               data: data
             ).done (msg) ->
               $('.b-calculator-nalog__amount').html(msg)
+              $('.region_collection').hide()
 
 $ ->
   $('select#calculator_region').observe_field 0.5,->
