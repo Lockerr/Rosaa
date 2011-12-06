@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def get_location
-    reset_session
+
 
     if session[:geo]
       @geo = session[:geo]

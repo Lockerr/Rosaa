@@ -69,7 +69,7 @@ class IdeasController < ApplicationController
   # DELETE /ideas/1.json
   def vote
     @idea = Idea.find_by_id(params[:id])
-    current_user.likes @idea if current_user
+    current_user.likes @idea
 
     respond_to do |format|
       format.js { @idea }
@@ -78,7 +78,7 @@ class IdeasController < ApplicationController
 
   def devote
     @idea = Idea.find_by_id(params[:id])
-    current_user.dislikes @idea if current_user
+    current_user.dislikes @idea
     respond_to do |format|
         format.js { @idea }
     end
@@ -101,9 +101,7 @@ class IdeasController < ApplicationController
   protected
 
   def check_for_auth
-    if current_user
-      true
-    else
+    if !current_user
       respond_to do |format|
         format.js { render 'register'}
       end
