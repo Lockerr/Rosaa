@@ -3,9 +3,9 @@
     .b-post-leftcol
       .b-post-header
         %span.js-post-header__link.inlineBlock.pseudolink-underline.b-post-header__link
-          = idea.subject
+          = link_to idea.subject || "", idea_comments_path(idea) , :remote => true
       .b-post__text
-        = idea.body
+        = idea.body[0..250] + (idea.body.size > 250 ? "..." : '')
       .b-post__author
         = "# #{idea.id} //"
         = idea.created_at.strftime('%d %B %Y %H:%M')

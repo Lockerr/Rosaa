@@ -21,6 +21,10 @@
             %ul
               - @idea.errors.full_messages.each do |msg|
                 %li= msg
+        = f.label :subject, :class => 'b-regform__label'
+        %br/
+        = f.text_field :subject, :class => 'b-textinput', :id => 'b-newpostform__text', :style => 'height: 34px;'
+        %br/
         = f.label :body, :class => 'b-regform__label'
         %br/
         = f.text_area :body, :class => 'b-textinput', :id => 'b-newpostform__text', :cols => 50, :rows => 10
