@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Rossa
+    %title Rosaa
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = stylesheet_link_tag 'style.css'
@@ -15,9 +15,9 @@
       = render 'layouts/user_nav'
     .l-wrap
       = render 'layouts/header_logo'
-      = render 'layouts/registration' if !current_user
       #content
         = yield
+      = render 'layouts/registration' if !current_user
       = render 'layouts/footer'
 
 

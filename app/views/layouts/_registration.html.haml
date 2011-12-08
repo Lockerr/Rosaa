@@ -20,6 +20,7 @@
 .js-regform.b-regform
   #user_login_box
     .error_messages
+      Чтобы вступить в наше сообществуо укажите Ваш e-mail и придумайте пароль.
     = form_for("user", :url => user_session_path, :html => {:class => 'b-regform-form', :id => 'sign_in'}, :remote => true, :format => :json) do |f|
       .b-topcol-leftcol
         .b-textinput-wrap

@@ -1,0 +1,54 @@
+.b-posts{:id => "idea_#{@commentable.id}"}
+  .js-post.b-post
+    .b-post-leftcol
+      .b-post-header
+        %span.js-post-header__link.inlineBlock.pseudolink-underline.b-post-header__link
+          = link_to @commentable.subject || "", idea_comments_path(@commentable) , :remote => true
+      .b-post__text
+        = @commentable.body + (@commentable.body.size > 250 ? "..." : '')
+      .b-post__author
+        = "# #{@commentable.id} //"
+        = @commentable.created_at.strftime('%d %B %Y %H:%M')
+        от
+        %a{:href => "#"}
+          = @commentable.user.nick || @commentable.user.email
+    .b-post-rightcol
+      = button_to '', vote_idea_path(@commentable), :remote => true, :method => :post, :class => 'vote'
+      .inlineBlock.b-post-karma__amount{:id => "idea_#{@commentable.id}"}
+        = @commentable.likes.count - @commentable.dislikes.count
+      = button_to '', devote_idea_path(@commentable), :remote => true, :class => 'devote'
+      .b-post-karma__votes
+        Голосов:
+        = @commentable.votes.count
+        Комментариев
+        = @commentable.comments.count
+        - if @commentable.comments.any?
+          %span.b-post__comments-link
+            %span
+              = link_to 'Комментарии', idea_comments_path(@commentable) , :remote => true
+              ↓
+        - else
+          %span.b-post__comment-link
+            %span.js-post__comment-link.inlineBlock.pseudolink-dotted Комментировать
+            ↓
+
+      .b-post-share
+        %a{:href => "#"}
+          %img{:alt => "", :src => "assets/yaru.gif"}/
+        %a{:href => "#"}
+          %img{:alt => "", :src => "assets/vk.gif"}/
+        %a{:href => "#"}
+          %img{:alt => "", :src => "assets/facebook.gif"}/
+    .clear
+    %span.b-bigblockcorner-container
+      %span.b-bigblockcorner-wrap
+        %span.b-bigblockcorner
+  - if !@commentable.comments.any?
+    .js-comment.b-comment{:style => 'display: none'}
+      = render "comments/form", :idea => @commentable
+
+= will_paginate @comments
+= render @comments
+= will_paginate @comments
+.js-comment.b-comment
+  = render 'form', :idea => @commentable

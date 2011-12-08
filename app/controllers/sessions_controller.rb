@@ -6,7 +6,6 @@ class SessionsController < Devise::SessionsController
   def create
     resource = warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#failure")
     sign_in(resource_name, resource)
-    current_user.remember_me!
     c = User.count
     return render :json => { :success => true, :signed_up => true, :count => c, :content => render_to_string(:layout => false, :partial => 'layouts/user_nav') }
   end
@@ -33,6 +32,8 @@ class SessionsController < Devise::SessionsController
       errors = resource.errors
       if errors.messages.keys.include?(:email) and !u
         partial = 'wrong_email'
+      elsif !u.confirmed? and u
+        partial = 'not_confirmed'
       elsif u and !u.valid_password?(params[:user] ? params[:user][:password] : '')
         resource.errors.messages.delete(:email)
         partial = 'wrong_password'
@@ -41,8 +42,6 @@ class SessionsController < Devise::SessionsController
         partial = 'wrong_password'
       elsif errors.messages.keys.include? :password
         partial = 'wrong_password'
-      elsif resource.confirmed?
-        partial = 'not_confirmed'
       elsif !(params[:user][:email] =~ (/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i))
         partial = 'wrong_email'
       else
