@@ -11,7 +11,7 @@
         = idea.created_at.strftime('%d %B %Y %H:%M')
         от
         %a{:href => "#"}
-          = idea.user.nick || idea.user.email
+          = idea.user.nick || idea.user.email.split('@')[0]
     .b-post-rightcol
       = button_to '', vote_idea_path(idea), :remote => true, :method => :post, :class => 'vote'
       .inlineBlock.b-post-karma__amount{:id => "idea_#{idea.id}"}
