@@ -3,7 +3,7 @@
   = #button_to '', devote_comment_path(comment), :method => :post, :class => 'down'
 
 .comment-title
-  = comment.user.nick || comment.user.first_name || comment.user.email
+  = comment.user.nick || comment.user.first_name || comment.user.email.split('@')[0]
 
   .date
     = comment.created_at.strftime('%d %B %Y %H:%M')
