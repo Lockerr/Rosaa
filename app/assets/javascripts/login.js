@@ -23,8 +23,13 @@ $(document).ready(function() {
 
 var bind_sign_form = function() {
   $('form#sign_in')
+      .bind('ajax:beforeSend', function() {
+        $('.error_messages').hide();
+        $('.error_messages').html('Пожалуйста подождите...');
+        $('.error_messages').show(200);
+  })
       .bind('ajax:success', function(e, data, status, xhr) {
-        console.log(data);
+
         if (data.success) {
           $('.b-registration-users__amount').html(data.count);
           $('.b-registration-button__slogan').html('Вы присоединились');
@@ -34,7 +39,9 @@ var bind_sign_form = function() {
 
 
         } else {
-          $('.error_messages').html('Вам отправлено письмо с инструкцие по подтверждению регистрация');
+          $('.error_messages').hide();
+          $('.error_messages').html('Вам отправлено письмо с инструкцией по подтверждению регистрация');
+          $('.error_messages').show(200);
           bind_sign_form();
 
         }
