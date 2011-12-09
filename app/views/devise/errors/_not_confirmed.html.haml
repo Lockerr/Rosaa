@@ -2,7 +2,7 @@
   .login_error_message
     - u = User.find_by_email(params[:user][:email])
     - if !u.valid_password?(params[:user][:password])
-      = 'Неверный пароль'
+      = 'Регистрация вашей учетной записи не подтверждена'
       .solution
         = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :remote => true, :html => {:method => :post }) do |f|
           = f.email_field :email, :hidden => true, :value => u.email

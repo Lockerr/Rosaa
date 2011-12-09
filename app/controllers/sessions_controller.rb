@@ -24,7 +24,7 @@ class SessionsController < Devise::SessionsController
       else
         set_flash_message :notice, :inactive_signed_up, :reason => inactive_reason(resource) if is_navigational_format?
         expire_session_data_after_sign_in!
-        return render :json => { :success => true, :count => c, :content => render_to_string(:layout => false, :partial => 'devise/confirmations/sent') }
+        return render :json => { :success => false, :count => c, :content => render_to_string(:layout => false, :partial => 'devise/confirmations/sent') }
 
       end
     else

@@ -34,7 +34,7 @@ var bind_sign_form = function() {
 
 
         } else {
-          $(".js-regform").html(data.content);
+          $('.error_messages').html('Вам отправлено письмо с инструкцие по подтверждению регистрация');
           bind_sign_form();
 
         }
