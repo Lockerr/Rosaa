@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -22,7 +22,7 @@ gem 'paperclip'
 gem 'devise'
 gem 'htmlentities'
 gem 'cubus-settingslogic'
-
+gem 'pg', :group => 'production'
 
 group :assets do
   gem 'sass-rails'
