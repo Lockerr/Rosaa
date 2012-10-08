@@ -5,6 +5,7 @@ ruby '1.9.3'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
+gem 'yaml_db'
 gem 'mysql2'
 gem 'geocoder'
 gem 'acts_as_votable'
