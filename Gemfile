@@ -24,6 +24,8 @@ gem 'devise'
 gem 'htmlentities'
 gem 'cubus-settingslogic'
 gem 'pg', :group => 'production'
+gem 'quiet_assets'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails'

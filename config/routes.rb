@@ -1,7 +1,7 @@
 Rossa::Application.routes.draw do
 
 
-  devise_for :users, :controllers => {:sessions => 'sessions', :passwords => 'passwords'}
+  devise_for :users #, :controllers => {:sessions => 'sessions', :passwords => 'passwords'}
   
   resources :calculator
   resources :index
