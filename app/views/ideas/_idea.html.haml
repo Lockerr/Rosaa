@@ -20,7 +20,8 @@
       .b-post-karma__votes
         Голосов:
         = idea.votes.count
-        Комментариев
+        %br/
+        Комментариев:
         = idea.comments.count
         - if idea.comments.any?
           %span.b-post__comments-link
