@@ -23,8 +23,7 @@ class IdeasController < ApplicationController
     end
   end
 
-  # GET /ideas/new
-  # GET /ideas/new.json
+  
   def new
     @idea = Idea.new
 
@@ -39,18 +38,17 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
   end
 
-  # POST /ideas
-  # POST /ideas.json
+  
   def create
     params[:idea][:user_id] = current_user.id if current_user
-    @idea = Idea.create(params[:idea])
+
+    @idea = Idea.new(params[:idea])
     @idea.save
 
     redirect_to root_path
   end
 
-  # PUT /ideas/1
-  # PUT /ideas/1.json
+  
   def update
     @idea = Idea.find(params[:id])
 

@@ -1,11 +1,6 @@
 class CommentsController < ApplicationController
-  # GET /comments
-  # GET /comments.json
-  before_filter :check_for_auth, :only => [:create, :update, :delete]
-  #TODO: Comments like in habrahabr
 
-  #TODO: Three steps registrations
-  #TODO: 2. fake form like in alpha
+  before_filter :check_for_auth, :only => [:create, :update, :delete]
 
   def index
     @commentable = find_commentable
@@ -17,8 +12,7 @@ class CommentsController < ApplicationController
     end
   end
 
-  # GET /comments/1
-  # GET /comments/1.json
+
   def show
     @comment = Comment.find(params[:id])
 
@@ -29,8 +23,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  # GET /comments/new
-  # GET /comments/new.json
   def new
     @commentable = find_commentable
     @comment     = Comment.new
@@ -42,13 +34,11 @@ class CommentsController < ApplicationController
     end
   end
 
-  # GET /comments/1/edit
+
   def edit
     @comment = Comment.find(params[:id])
   end
 
-  # POST /comments
-  # POST /comments.json
   def create
     @commentable = find_commentable
     @comment     = @commentable.comments.build params[:comment]
@@ -66,8 +56,6 @@ class CommentsController < ApplicationController
 
   end
 
-  # PUT /comments/1
-  # PUT /comments/1.json
   def update
     @comment = Comment.find(params[:id])
 
