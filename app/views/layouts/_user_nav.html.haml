@@ -3,7 +3,7 @@
   \#{link_to t('sign_out'), destroy_user_session_path, :method => :delete}
 - else
   #login_tab
-    = t('devise.sessions.sign_in.title')
+    %a{:href => '#registration', :class=> 'toggle-login'}= t('devise.sessions.sign_in.title')
     %br/
   =# link_to t('devise.sessions.sign_in.title'), new_user_session_path, :remote => true, :id => 'login_tab'
 
@@ -11,6 +11,6 @@
     = t('first_time')
     %br/
   #register_tab
-    = "&nbsp".html_safe + t('sign_up')
+    %a{:href => '#registration', :class=> 'toggle-register'}= t('devise.sessions.sign_in.title')
 
   = "&nbsp".html_safe + t('takes_a_minute')
