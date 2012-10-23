@@ -66,8 +66,9 @@ class IdeasController < ApplicationController
   # DELETE /ideas/1
   # DELETE /ideas/1.json
   def vote
-    @idea = Idea.find_by_id(params[:id])
-    current_user.likes @idea
+    if @idea = Idea.find_by_id(params[:id])
+      current_user.likes @idea unless current_user.voted_for? @idea
+    end
 
     respond_to do |format|
       format.js { @idea }
@@ -76,7 +77,7 @@ class IdeasController < ApplicationController
 
   def devote
     @idea = Idea.find_by_id(params[:id])
-    current_user.dislikes @idea
+    current_user.dislikes @idea  unless current_user.voted_for? @idea
     respond_to do |format|
         format.js { @idea }
     end
