@@ -1,11 +1,14 @@
 .alert.alert-success
-  %strong Статистика:
-  Сегодня:
-  = User.where(:created_at => [Time.now.at_beginning_of_day .. Time.now]).count
-  За неделю:
-  = User.where(:created_at => [Time.now.weeks_ago(1) .. Time.now]).count
-  За месяц:
-  = User.where(:created_at => [Time.now.months_ago(1) .. Time.now]).count
+  %strong.pull-left Зарегистрировано:
+  %span{:style => 'margin-left: 10px'}
+    Сегодня:
+    = User.where(:created_at => [Time.now.at_beginning_of_day .. Time.now]).count
+  %span{:style => 'margin-left: 2px; padding-left: 5px;border-left: 1px dotted'}
+    За неделю:
+    = User.where(:created_at => [Time.now.weeks_ago(1) .. Time.now]).count
+  %span{:style => 'margin-left: 2px; padding-left: 5px;border-left: 1px dotted'}
+    За месяц:
+    = User.where(:created_at => [Time.now.months_ago(1) .. Time.now]).count
 
 
   
