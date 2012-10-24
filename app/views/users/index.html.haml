@@ -17,7 +17,7 @@
   %th Дата регистрации
   %th Дата последнего входа 
   - for user in @users
-    %tr
+    %tr{:class => ('info' if user.role == 1)}
       %td
         = user.email
       %td 
