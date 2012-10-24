@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20121024033940) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.integer  "role",                   :limit => 1, :default => 0
+    t.integer  "role",                   :limit => 2, :default => 0
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
