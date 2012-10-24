@@ -2,7 +2,8 @@
 %html
   %head
     %title Rosaa
-    = stylesheet_link_tag "application"
+    / = stylesheet_link_tag "application"
+    = stylesheet_link_tag "bootstrap_and_overrides"
     = javascript_include_tag "application"
     
     /[if IE]
@@ -11,14 +12,9 @@
       <link rel="stylesheet" type="text/css" href="CSS/ie.css"/>
     = csrf_meta_tags
   %body
-    #user_nav
-      = render 'layouts/user_nav'
-    .l-wrap
-      = render 'layouts/header_logo'
-      #content
-        = yield
-      = render 'layouts/registration' if !current_user
-      = render 'layouts/footer'
-
+    = render 'nav_tab'
+    
+    .container
+      = yield
 
 

@@ -61,17 +61,17 @@ input[class=vote], input[class=devote] {
 
 }
 input[class="vote"] {
-    background: url('b-post-karma.gif') no-repeat center -12px;
+    background: url('/assets/b-post-karma.gif') no-repeat center -12px;
     background-color: red;
 
 }
 input[class="devote"] {
-    background: url('b-post-karma.gif') no-repeat center 12px;
+    background: url('/assets/b-post-karma.gif') no-repeat center 12px;
     background-color: red;
 
 }
 
-#user_nav {
+#user_nav, #admin_nav {
   right: 0px;
   position: absolute;
   width: 410px;
@@ -94,10 +94,13 @@ input[class="devote"] {
   #first_time_text {
     float: left;
   }
-
-
-
 }
+
+#admin_nav {
+  float: left;
+  left: 0px
+}
+
 
 
 

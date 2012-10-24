@@ -1,0 +1,26 @@
+.alert.alert-success
+  %strong Статистика:
+  Сегодня:
+  = User.where(:created_at => [Time.now.at_beginning_of_day .. Time.now]).count
+  За неделю:
+  = User.where(:created_at => [Time.now.weeks_ago(1) .. Time.now]).count
+  За месяц:
+  = User.where(:created_at => [Time.now.months_ago(1) .. Time.now]).count
+
+
+  
+      
+
+
+%table.table.table-bordered.table-striped
+  %th e-mail
+  %th Дата регистрации
+  %th Дата последнего входа 
+  - for user in @users
+    %tr
+      %td
+        = user.email
+      %td 
+        = user.created_at.strftime('%d.%m.%Y')
+      %td 
+        = user.last_sign_in_at.strftime('%d.%m.%Y %H:%M')

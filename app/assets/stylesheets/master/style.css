@@ -409,7 +409,7 @@ a.b-toptext-lead__link:hover {
 	left: -20px;
 	width: 20px;
 	height: 18px;
-	background: url('b-regform__close.png') no-repeat 0 0;
+	background: url('/assets/b-regform__close.png') no-repeat 0 0;
 }
 .b-regform__close .pseudolink-dotted:hover .b-pseudolink-icon {
 	background-position: 0 -18px;
@@ -419,7 +419,7 @@ a.b-toptext-lead__link:hover {
 	top: 0;
 }
 .b-regform .b-bigblockcorner {
-	background: url('b-bigblockcorner.png') no-repeat scroll 0 -15px;
+	background: url('/assets/b-bigblockcorner.png') no-repeat scroll 0 -15px;
     z-index: 4;
 }
 

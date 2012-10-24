@@ -11,7 +11,12 @@ class ApplicationController < ActionController::Base
 
 
     if session[:geo]
-      @geo = session[:geo]
+      if session[:geo] == '??????'
+        @geo = ''
+        session.delete :geo
+      else
+        @geo = session[:geo]
+      end
     else
       ip = request.ip
 
@@ -22,10 +27,10 @@ class ApplicationController < ActionController::Base
         coder = HTMLEntities.new
         @geo = coder.decode(region)
       rescue
-        @geo = '??????'
+        @geo = ''
       end
 
-      if @geo != ''
+      unless @geo == ''
         session[:geo] = @geo
       end
     end

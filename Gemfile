@@ -26,6 +26,7 @@ gem 'cubus-settingslogic'
 gem 'pg', :group => 'production'
 gem 'quiet_assets'
 gem 'thin'
+gem 'twitter-bootstrap-rails'
 
 group :assets do
   gem 'sass-rails'

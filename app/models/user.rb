@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
+  def is_admin?
+    role == 1 ? true : false
+  end
+
 
 
 end

@@ -18,7 +18,7 @@
     font-size: large;
     width: 320px;
     float: left;
-    background-image: url("icon/lens.png");
+    background-image: url("/assets/icon/lens.png");
     background-repeat: no-repeat;
     background-position: 10px;
     padding-left: 58px;
@@ -103,7 +103,7 @@
     margin-left: 0.313em;
   }
   .b-bigblockcorner {
-    background: url('b-bigblockcorner.png') no-repeat 0 0;
+    background: url('/assets/b-bigblockcorner.png') no-repeat 0 0;
     z-index: 4;
   }
 }
