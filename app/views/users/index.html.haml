@@ -13,11 +13,15 @@
 
 
 %table.table.table-bordered.table-striped
+  %th Роль
   %th e-mail
   %th Дата регистрации
   %th Дата последнего входа 
   - for user in @users
     %tr{:class => ('info' if user.role == 1)}
+      %td
+        = 'A' if user.role == 1
+        = 'П' if user.role == 0
       %td
         = user.email
       %td 
