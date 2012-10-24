@@ -13,11 +13,12 @@
         %a{:href => "#"}
           = idea.user.nick || idea.user.email.split('@')[0]
     .b-post-rightcol
-      = button_to '', vote_idea_path(idea), :remote => true, :method => :post, :class => 'vote'
+      = button_to '', vote_idea_path(idea), :remote => true, :method => :post, :class => 'vote', :style => ('background-color: #c9c9c9' if current_user.voted_for? idea if current_user )
       .inlineBlock.b-post-karma__amount{:id => "idea_#{idea.id}"}
         = idea.likes.count - idea.dislikes.count
-      = button_to '', devote_idea_path(idea), :remote => true, :class => 'devote'
+      = button_to '', devote_idea_path(idea), :remote => true, :class => 'devote', :style => ('background-color: #c9c9c9' if current_user.voted_for? idea if current_user )
       .b-post-karma__votes
+        = 'Ваш голос принят!<br/>'.html_safe if current_user.voted_for? idea if current_user 
         Голосов:
         = idea.votes.count
         %br/
